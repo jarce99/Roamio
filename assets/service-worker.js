@@ -4,10 +4,11 @@ const OFFLINE_PAGE = '/offline.html';
 
 const PRECACHE_ASSETS = [
   '/offline.html',
-  '/assets/theme.css',
-  '/assets/theme.js',
-  '/assets/vendor.js',
-  '/assets/critical.js'
+  '/assets/theme.min.css',
+  '/assets/theme.min.js',
+  '/assets/shop.min.js',
+  '/assets/lazysizes.min.js',
+  '/assets/vendor.min.js'
 ];
 
 // Install stage: precache offline page and essential resources

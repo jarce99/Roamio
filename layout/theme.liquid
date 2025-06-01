@@ -92,24 +92,16 @@
     }
   </style>
   
-  {%- comment -%}Load CSS with media queries{%- endcomment -%}
-  <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="{{ 'apps.css' | asset_url }}" media="print" onload="this.media='all'">
-  
-  <noscript>
-    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
-    <link rel="stylesheet" href="{{ 'apps.css' | asset_url }}">
-  </noscript>
-
+  {%- comment -%}JavaScript Loading Optimization{%- endcomment -%}
   <script>
-    // Prevent FOUC (Flash of Unstyled Content)
     document.documentElement.className = document.documentElement.className.replace('no-js', '');
-    document.body.style.opacity = '1';
     
-    // Load theme scripts efficiently
+    // Load theme scripts
     window.addEventListener('DOMContentLoaded', function() {
       const scripts = [
-        '{{ "theme.js" | asset_url }}'
+        '{{ "theme.min.js" | asset_url }}',
+        '{{ "shop.min.js" | asset_url }}',
+        '{{ "lazysizes.min.js" | asset_url }}'
       ];
       
       scripts.forEach(function(src) {
@@ -121,11 +113,17 @@
     });
   </script>
 
-  {%- comment -%}Critical JavaScript{%- endcomment -%}
-  <script src="{{ 'lazysizes.min.js' | asset_url }}" async defer></script>
+  {%- comment -%}Load CSS with media queries{%- endcomment -%}
+  <link rel="stylesheet" href="{{ 'theme.min.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'apps.min.css' | asset_url }}" media="print" onload="this.media='all'">
+
+  <noscript>
+    <link rel="stylesheet" href="{{ 'theme.min.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'apps.min.css' | asset_url }}">
+  </noscript>
 
   {%- if settings.enable_tab_attention -%}
-    <script src="{{ 'tab-attention.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'tab-attention.min.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 
   {%- if request.page_type contains 'customers/' -%}
