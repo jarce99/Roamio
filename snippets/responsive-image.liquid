@@ -24,3 +24,36 @@
   height="{{ image.height }}"
   {% if draggable == false %}draggable="false"{% endif %}
 > 
+
+{% comment %}
+    Renders a responsive image
+    Accepts:
+    - image: {Object} Image object
+    - max_width: {Number} Max width of the image container
+    - max_height: {Number} Max height of the image container (optional)
+    - sizes: {String} Sizes attribute for the image (optional)
+    Usage:
+    {% render 'responsive-image' with image: product.featured_image, max_width: 700, max_height: 800 %}
+{% endcomment %}
+
+{%- if image != blank -%}
+  {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+  {%- assign sizes = sizes | default: '100vw' -%}
+  
+  <img
+    class="lazyload"
+    src="{{ image | img_url: '50x' }}"
+    data-src="{{ img_url }}"
+    data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+    data-aspectratio="{{ image.aspect_ratio }}"
+    data-sizes="{{ sizes }}"
+    width="{{ image.width }}"
+    height="{{ image.height }}"
+    alt="{{ image.alt | escape }}"
+    loading="lazy"
+    decoding="async"
+  >
+  <noscript>
+    <img src="{{ image | img_url: '1024x' }}" alt="{{ image.alt | escape }}" width="{{ image.width }}" height="{{ image.height }}">
+  </noscript>
+{%- endif -%} 

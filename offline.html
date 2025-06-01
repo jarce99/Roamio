@@ -3,77 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Offline - Roamio</title>
+  <title>Offline - Roamio eSIM Store</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
       margin: 0;
-      padding: 0;
-      min-height: 100vh;
+      padding: 20px;
+      background: #f8f9fa;
+      color: #343a40;
       display: flex;
-      flex-direction: column;
+      min-height: 100vh;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      background-color: #f8f9fa;
-      color: #343a40;
     }
     .container {
-      padding: 2rem;
       max-width: 600px;
-      margin: 0 auto;
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #212529;
+      margin: 0 0 20px;
+      color: #1a73e8;
+      font-size: 2em;
     }
     p {
-      font-size: 1.125rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-      color: #495057;
+      margin: 0 0 15px;
+      font-size: 1.1em;
     }
     .btn {
       display: inline-block;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: 600;
+      background: #1a73e8;
+      color: white;
       text-decoration: none;
-      color: #fff;
-      background-color: #007bff;
-      border-radius: 0.25rem;
-      transition: background-color 0.2s;
+      padding: 12px 24px;
+      border-radius: 6px;
+      margin-top: 20px;
+      font-weight: 500;
+      transition: background 0.3s ease;
     }
     .btn:hover {
-      background-color: #0056b3;
+      background: #1557b0;
     }
     .icon {
-      width: 120px;
-      height: 120px;
-      margin-bottom: 2rem;
+      font-size: 48px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M1 1l22 22M16.72 11.06A10.94 10.94 0 1 1 5 1.24"/>
-      <path d="M8.53 3.53A10.94 10.94 0 0 1 21.47 16.47"/>
-    </svg>
+    <div class="icon">📶</div>
     <h1>You're Offline</h1>
-    <p>It looks like you've lost your internet connection. Please check your connection and try again.</p>
+    <p>It looks like you've lost your internet connection. Don't worry, Roamio has got you covered!</p>
+    <p>Once you're back online, you can continue exploring our eSIM plans for seamless global connectivity.</p>
     <a href="/" class="btn">Try Again</a>
   </div>
   <script>
-    // Check for online status and redirect
+    // Check for online status
     window.addEventListener('online', function() {
-      window.location.reload();
-    });
-    
-    // Add retry button functionality
-    document.querySelector('.btn').addEventListener('click', function(e) {
-      e.preventDefault();
       window.location.reload();
     });
   </script>

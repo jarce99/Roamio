@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="{{ settings.color_button_background }}">
   
   {%- comment -%}Enhanced SEO Meta Tags{%- endcomment -%}
@@ -52,8 +52,6 @@
   {%- comment -%}Performance Optimizations{%- endcomment -%}
   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-  <link rel="preload" href="{{ 'theme.css' | asset_url }}" as="style">
-  <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
   
   {% # theme-check-disable RemoteAsset %}
   <link rel="dns-prefetch" href="https://ajax.googleapis.com">
@@ -76,29 +74,55 @@
 
   {{ content_for_header }}
 
-  {%- comment -%}JavaScript Loading Optimization{%- endcomment -%}
+  {%- comment -%}Preload Critical Assets{%- endcomment -%}
+  <link rel="preload" href="{{ 'theme.css' | asset_url }}" as="style">
+  <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
+  <link rel="preload" href="{{ settings.font_heading | font_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ settings.font_body | font_url }}" as="font" type="font/woff2" crossorigin>
+  
+  {%- comment -%}Critical CSS Inline{%- endcomment -%}
+  <style>
+    body {opacity: 0; transition: opacity 0.5s ease-in;}
+    .no-js body {opacity: 1;}
+    @font-face {
+      font-family: 'ShopifyPrevent';
+      font-display: swap;
+      src: local('Arial');
+      unicode-range: U+000-5FF;
+    }
+  </style>
+  
+  {%- comment -%}Load CSS with media queries{%- endcomment -%}
+  <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'apps.css' | asset_url }}" media="print" onload="this.media='all'">
+  
+  <noscript>
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'apps.css' | asset_url }}">
+  </noscript>
+
   <script>
-    // Defer non-critical JavaScript
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        const deferredScripts = [
-          '{{ "vendor.js" | asset_url }}',
-          '{{ "theme.js" | asset_url }}',
-          '{{ "shop.js" | asset_url }}'
-        ];
-        
-        deferredScripts.forEach(function(src) {
-          const script = document.createElement('script');
-          script.src = src;
-          script.defer = true;
-          document.body.appendChild(script);
-        });
-      }, 1000);
+    // Prevent FOUC (Flash of Unstyled Content)
+    document.documentElement.className = document.documentElement.className.replace('no-js', '');
+    document.body.style.opacity = '1';
+    
+    // Load theme scripts efficiently
+    window.addEventListener('DOMContentLoaded', function() {
+      const scripts = [
+        '{{ "theme.js" | asset_url }}'
+      ];
+      
+      scripts.forEach(function(src) {
+        const script = document.createElement('script');
+        script.src = src;
+        script.defer = true;
+        document.body.appendChild(script);
+      });
     });
   </script>
 
   {%- comment -%}Critical JavaScript{%- endcomment -%}
-  <script src="{{ 'critical.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'lazysizes.min.js' | asset_url }}" async defer></script>
 
   {%- if settings.enable_tab_attention -%}
     <script src="{{ 'tab-attention.js' | asset_url }}" defer="defer"></script>
