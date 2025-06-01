@@ -1,0 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-xl tracking-heading",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "custom_liquid_CkrAzP": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "liquid": "<div class=\"dashboard-wrapper\">\n  <style>\n    /* Wrapper & Reset */\n    .dashboard-wrapper {\n      width: 100%;\n      max-width: 400px;\n      margin: 2rem auto;\n      background: #fff;\n      border-radius: 12px;\n      box-shadow: 0 4px 16px rgba(0,0,0,0.1);\n      overflow: hidden;\n      font-family: 'Inter', sans-serif;\n      color: #111;\n    }\n    .dashboard-header {\n      background: #111;\n      padding: 1rem;\n      text-align: center;\n    }\n    .dashboard-header h2 {\n      margin: 0;\n      font-size: 1.25rem;\n      font-weight: 700;\n      color: #fff;\n    }\n    .dashboard-body {\n      padding: 1.5rem;\n    }\n    .input-group {\n      margin-bottom: 1rem;\n    }\n    .input-group label {\n      display: block;\n      font-size: 0.85rem;\n      margin-bottom: 0.25rem;\n      color: #555;\n    }\n    .input-group input {\n      width: 100%;\n      padding: 0.75rem 1rem;\n      border: 1px solid #ccc;\n      border-radius: 8px;\n      font-size: 1rem;\n    }\n    .btn {\n      width: 100%;\n      display: block;\n      background: #111;\n      color: #fff;\n      padding: 0.75rem;\n      border: none;\n      border-radius: 8px;\n      font-size: 1rem;\n      font-weight: 600;\n      text-align: center;\n      cursor: pointer;\n      transition: background 0.2s;\n      text-decoration: none;\n    }\n    .btn:hover { background: #333; }\n    .hidden { display: none; }\n\n    /* eSIM Card */\n    .esim-card {\n      background: #fafafa;\n      border-radius: 12px;\n      padding: 1.5rem;\n      box-shadow: 0 4px 12px rgba(0,0,0,0.08);\n      margin-top: 1rem;\n    }\n    .esim-header {\n      display: flex;\n      align-items: center;\n      gap: 1rem;\n      margin-bottom: 1rem;\n    }\n    .esim-header img {\n      width: 40px;\n      height: 40px;\n      border-radius: 8px;\n      object-fit: cover;\n    }\n    .info h3 {\n      margin: 0;\n      font-size: 1rem;\n      font-weight: 600;\n      color: #000;\n    }\n    .info small {\n      font-size: 0.75rem;\n      color: #555;\n    }\n    .progress-bar {\n      background: #e0e0e0;\n      border-radius: 8px;\n      overflow: hidden;\n      height: 12px;\n      margin: 1rem 0;\n    }\n    .progress {\n      height: 100%;\n      background-color: #D7F848 !important;\n      width: 0% !important;\n      transition: width 0.8s ease;\n    }\n    .usage-text {\n      font-size: 0.85rem;\n      color: #555;\n      text-align: right;\n    }\n  </style>\n\n  <!-- Login Screen -->\n  <div id=\"login-container\">\n    <div class=\"dashboard-header\"><h2>Welcome to Roamio</h2></div>\n    <div class=\"dashboard-body\">\n      <div class=\"input-group\">\n        <label for=\"email\">Enter your email to continue</label>\n        <input type=\"email\" id=\"email\" placeholder=\"you@example.com\" />\n      </div>\n      <button class=\"btn\" onclick=\"login()\">Log In</button>\n    </div>\n  </div>\n\n  <!-- Dashboard -->\n  <div id=\"dashboard-container\" class=\"hidden\">\n    <div class=\"dashboard-header\"><h2>Your eSIM Overview</h2></div>\n    <div class=\"dashboard-body\">\n      <!-- eSIM Card 1 -->\n      <div class=\"esim-card\">\n        <div class=\"esim-header\">\n          <img src=\"https://flagcdn.com/w80/us.png\" alt=\"USA Flag\">\n          <div class=\"info\">\n            <h3>USA 10GB / 30 Days</h3>\n            <small>Activated: May 1, 2025 • Expires: May 31, 2025</small>\n          </div>\n        </div>\n        <div class=\"progress-bar\"><div id=\"progress1\" class=\"progress\"></div></div>\n        <div class=\"usage-text\" id=\"usage-text1\"></div>\n      </div>\n      <!-- eSIM Card 2 -->\n      <div class=\"esim-card\">\n        <div class=\"esim-header\">\n          <img src=\"https://flagcdn.com/w80/es.png\" alt=\"Spain Flag\">\n          <div class=\"info\">\n            <h3>Spain 5GB / 15 Days</h3>\n            <small>Activated: May 5, 2025 • Expires: May 20, 2025</small>\n          </div>\n        </div>\n        <div class=\"progress-bar\"><div id=\"progress2\" class=\"progress\"></div></div>\n        <div class=\"usage-text\" id=\"usage-text2\"></div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Inline script to handle login and simulate usage -->\n  <script>\n    function login() {\n      const email = document.getElementById('email').value.trim();\n      if (!email) {\n        alert('Please enter your email');\n        return;\n      }\n      document.getElementById('login-container').classList.add('hidden');\n      document.getElementById('dashboard-container').classList.remove('hidden');\n      setTimeout(() => {\n        const usage1 = 62, total1 = 10;\n        document.getElementById('progress1').style.width = usage1 + '%';\n        document.getElementById('usage-text1').innerText = `${usage1}% used (${(usage1/100*total1).toFixed(1)}GB of ${total1}GB)`;\n        const usage2 = 40, total2 = 5;\n        document.getElementById('progress2').style.width = usage2 + '%';\n        document.getElementById('usage-text2').innerText = `${usage2}% used (${(usage2/100*total2).toFixed(1)}GB of ${total2}GB)`;\n      }, 300);\n    }\n  </script>\n</div>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "custom_liquid_CkrAzP"
+  ]
+}

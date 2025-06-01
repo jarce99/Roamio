@@ -1,0 +1,294 @@
+{%- comment -%}
+  Performance Optimizations
+  - Implements lazy loading
+  - Adds priority hints
+  - Optimizes resource loading
+{%- endcomment -%}
+
+{%- liquid
+  assign critical_images = ''
+  if template == 'index'
+    assign critical_images = section.settings.hero_image
+  elsif template == 'product'
+    assign critical_images = product.featured_image
+  endif
+-%}
+
+<script type="text/javascript">
+  // Lazy loading with priority hints
+  document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    if ('loading' in HTMLImageElement.prototype) {
+      images.forEach(img => {
+        if (img.dataset.priority === 'high') {
+          img.loading = 'eager';
+          img.fetchpriority = 'high';
+        }
+      });
+    } else {
+      // Fallback for browsers that don't support lazy loading
+      const script = document.createElement('script');
+      script.src = '{{ "lazysizes.min.js" | asset_url }}';
+      document.body.appendChild(script);
+    }
+  });
+
+  // Preload critical resources
+  const preloadLinks = [
+    { href: '{{ "theme.css" | asset_url }}', as: 'style' },
+    { href: '{{ "theme.js" | asset_url }}', as: 'script' }
+  ];
+
+  preloadLinks.forEach(link => {
+    const preloadLink = document.createElement('link');
+    preloadLink.rel = 'preload';
+    preloadLink.href = link.href;
+    preloadLink.as = link.as;
+    document.head.appendChild(preloadLink);
+  });
+</script>
+
+{%- comment -%}Resource Hints{%- endcomment -%}
+<link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+<link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+<link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
+<link rel="preconnect" href="https://roamiomobile.com">
+<link rel="dns-prefetch" href="https://ajax.googleapis.com">
+
+{%- comment -%}Priority Resources{%- endcomment -%}
+<link rel="preload" href="{{ 'theme.css' | asset_url }}" as="style">
+<link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
+<link rel="preload" href="{{ settings.logo | image_url }}" as="image">
+{% if template == 'index' %}
+  <link rel="preload" href="{{ sections.slideshow-hero.settings.image | image_url }}" as="image">
+{% endif %}
+
+{%- comment -%}Critical CSS{%- endcomment -%}
+<style>
+  /* Critical rendering path CSS */
+  :root {
+    --page-width: 1200px;
+    --font-body-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-heading-family: var(--font-body-family);
+    --color-primary: #D7F848;
+    --color-text: #171717;
+    --color-background: #ffffff;
+    --transition-duration: 0.3s;
+  }
+
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body-family);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    background: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+
+  img, picture, video {
+    max-width: 100%;
+    display: block;
+  }
+
+  .page-width {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .visually-hidden {
+    position: absolute !important;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    word-wrap: normal !important;
+  }
+
+  /* Above the fold content styles */
+  .header {
+    position: relative;
+    z-index: 3;
+    background: var(--color-background);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .main-content {
+    min-height: 300px;
+    opacity: 1;
+    transition: opacity var(--transition-duration) ease;
+  }
+
+  .main-content.loading {
+    opacity: 0.6;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+  .product-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  /* Prevent layout shift */
+  img {
+    aspect-ratio: attr(width) / attr(height);
+  }
+</style>
+
+{%- comment -%}Font Loading Optimization{%- endcomment -%}
+<link rel="preload" href="{{ settings.type_header_font.url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ settings.type_body_font.url }}" as="font" type="font/woff2" crossorigin>
+
+<script>
+  // Font loading optimization
+  if ("fonts" in document) {
+    Promise.all([
+      new FontFace('Header Font', 'url({{ settings.type_header_font.url }})', {
+        style: 'normal',
+        weight: '700',
+        display: 'swap'
+      }).load(),
+      new FontFace('Body Font', 'url({{ settings.type_body_font.url }})', {
+        style: 'normal',
+        weight: '400',
+        display: 'swap'
+      }).load()
+    ]).then(fonts => {
+      fonts.forEach(font => document.fonts.add(font));
+      document.documentElement.classList.add('fonts-loaded');
+    });
+  }
+
+  // Performance monitoring
+  if (window.performance) {
+    const observer = new PerformanceObserver((list) => {
+      list.getEntries().forEach((entry) => {
+        if (entry.entryType === 'largest-contentful-paint') {
+          console.log('LCP:', entry.startTime);
+        }
+        if (entry.entryType === 'first-input') {
+          console.log('FID:', entry.processingStart - entry.startTime);
+        }
+      });
+    });
+    
+    observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] });
+  }
+</script>
+
+{%- comment -%}JavaScript Loading Optimization{%- endcomment -%}
+<script>
+  // Defer non-critical JavaScript
+  function loadScript(src, { async = true, defer = true } = {}) {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = async;
+      script.defer = defer;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.body.appendChild(script);
+    });
+  }
+
+  // Load non-critical scripts after page load
+  window.addEventListener('load', () => {
+    const scripts = [
+      { src: '{{ "vendor.js" | asset_url }}', priority: 'high' },
+      { src: '{{ "theme.js" | asset_url }}', priority: 'high' },
+      { src: '{{ "cart.js" | asset_url }}', priority: 'medium' },
+      { src: 'https://cdn.shopify.com/shopifycloud/shopify/assets/storefront/features-87e8399988880142f2c62771b9d8f2ff6c290b3ff745dd426eb0dfe0db9d1dae.js', priority: 'low' }
+    ];
+
+    // High priority scripts load immediately
+    const highPriority = scripts
+      .filter(s => s.priority === 'high')
+      .map(s => loadScript(s.src, { async: true, defer: false }));
+
+    // Medium and low priority scripts load after high priority
+    Promise.all(highPriority).then(() => {
+      const mediumPriority = scripts
+        .filter(s => s.priority === 'medium')
+        .map(s => loadScript(s.src));
+
+      // Low priority scripts load last
+      Promise.all(mediumPriority).then(() => {
+        scripts
+          .filter(s => s.priority === 'low')
+          .forEach(s => loadScript(s.src));
+      });
+    });
+  });
+
+  // Intersection Observer for lazy loading
+  if ('IntersectionObserver' in window) {
+    const lazyLoadObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const element = entry.target;
+          if (element.dataset.src) {
+            element.src = element.dataset.src;
+            element.removeAttribute('data-src');
+          }
+          if (element.dataset.srcset) {
+            element.srcset = element.dataset.srcset;
+            element.removeAttribute('data-srcset');
+          }
+          lazyLoadObserver.unobserve(element);
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-src], [data-srcset]').forEach(element => {
+      lazyLoadObserver.observe(element);
+    });
+  }
+</script>
+
+{%- comment -%}Service Worker Registration{%- endcomment -%}
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful');
+        })
+        .catch(err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+  }
+</script> 

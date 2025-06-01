@@ -1,0 +1,32 @@
+# Roamio eSIM Store - Robots.txt
+# Optimized for search engine crawling and indexing
+
+User-agent: *
+Allow: /
+Allow: /products/
+Allow: /collections/
+Allow: /blogs/
+Allow: /pages/
+Allow: /policies/
+
+# Prevent duplicate content indexing
+Disallow: /cart
+Disallow: /search
+Disallow: /account
+Disallow: /challenge
+Disallow: /404
+Disallow: /password
+Disallow: /tools/
+Disallow: /admin/
+Disallow: /cdn/
+Disallow: /*?*sort_by=
+Disallow: /*?*q=
+Disallow: /*?*filter=
+Disallow: /*?*limit=
+Disallow: /*?*page=
+
+# Allow product images for Google Shopping
+Allow: /*cdn.shopify.com/s/files/
+
+# Sitemap
+Sitemap: https://roamio.com/sitemap.xml 

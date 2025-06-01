@@ -1,0 +1,16 @@
+{%- comment -%}
+  Page Heading Snippet
+  - Ensures only one H1 per page
+  - Uses proper heading hierarchy
+{%- endcomment -%}
+
+{%- liquid
+  assign heading_tag = 'h2'
+  if template.name == 'index' or template == 'index'
+    assign heading_tag = 'h1'
+  endif
+-%}
+
+<{{ heading_tag }} class="heading {{ heading_size | default: 'title-lg' }}">
+  <split-words class="split-words block" data-animate="fade-up-large">{{ heading_text | escape }}</split-words>
+</{{ heading_tag }}> 

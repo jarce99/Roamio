@@ -1,0 +1,470 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_MTEMaT": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>Roamio Europe Plans</title>\n  <style>\n    /* ================================================\n       Variables\n    ================================================ */\n    :root {\n      --color-black:       #000000;\n      --color-lime:        #D7F848;\n      --color-white:       #ffffff;\n      --color-gray-light:  #f5f5f5;\n      --color-gray-200:    rgba(0, 0, 0, 0.12);\n      --color-gray-000:    #666666;\n      --radius:            12px;\n      --shadow-light:      0 2px 8px rgba(0, 0, 0, 0.05);\n      --shadow-hover:      0 4px 12px rgba(0, 0, 0, 0.15);\n      --gap:               1rem;   /* 16px */\n      --font-base:         1rem;   /* 16px */\n      --font-lg:           1.125rem; /* 18px */\n      --font-xl:           1.5rem; /* 24px */\n      --font-xxl:          2rem;   /* 32px */\n    }\n\n    /* ================================================\n       Base Reset + Box-Sizing\n    ================================================ */\n    *,\n    *::before,\n    *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n    }\n\n    body {\n      font-family: 'Inter', sans-serif;\n      font-size: var(--font-base);\n      background: var(--color-gray-light);\n      color: var(--color-black);\n      line-height: 1.6;\n      padding: var(--gap);\n    }\n\n    /* ================================================\n       Container\n    ================================================ */\n    .ri-container {\n      max-width: 1200px;\n      margin: 0 auto;\n      padding: 0 var(--gap);\n    }\n\n    /* ================================================\n       Section Header Styles\n    ================================================ */\n    .ri-section-header {\n      text-align: center;\n      margin-bottom: var(--gap);\n    }\n    .ri-section-header h1,\n    .ri-section-header h2,\n    .ri-section-header h3 {\n      position: relative;\n      display: inline-block;\n      color: var(--color-black);\n    }\n    .ri-section-header h2 {\n      font-size: var(--font-xxl);\n      font-weight: 600;\n      margin-bottom: 0.5rem;\n      padding-bottom: 0.25rem;\n    }\n    .ri-section-header h2::after {\n      content: '';\n      position: absolute;\n      bottom: 0;\n      left: 0;\n      width: 3rem;\n      height: 4px;\n      background: var(--color-lime);\n    }\n    .ri-section-header p {\n      font-size: var(--font-lg);\n      color: var(--color-gray-700);\n      margin-top: 0.5rem;\n    }\n\n    /* ================================================\n       Coverage Box Styles\n    ================================================ */\n    .coverage-box {\n      background: var(--color-white);\n      border-radius: var(--radius);\n      box-shadow: var(--shadow-light);\n      padding: calc(var(--gap) * 1.5);\n      margin-bottom: calc(var(--gap) * 2);\n    }\n    .coverage-box h3 {\n      font-size: var(--font-xl);\n      font-weight: 600;\n      margin-bottom: 0.75rem;\n    }\n    .coverage-box p {\n      font-size: var(--font-lg);\n      color: var(--color-gray-700);\n      margin-bottom: 0.75rem;\n    }\n\n    /* ================================================\n       Card Grid (CSS Grid)\n    ================================================ */\n    .ri-grid {\n      display: grid;\n      gap: var(--gap);\n      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n    }\n\n    /* ================================================\n       Individual Plan Card Styles\n    ================================================ */\n    .ri-plan-card {\n      background: var(--color-white);\n      border: 1px solid var(--color-gray-200);\n      border-radius: var(--radius);\n      box-shadow: var(--shadow-light);\n      padding: var(--gap);\n      text-align: center;\n      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n    }\n    .ri-plan-card:hover {\n      transform: translateY(-4px);\n      box-shadow: var(--shadow-hover);\n      border-color: var(--color-lime);\n    }\n\n    /* Card: Flag Icon */\n    .ri-plan-card img {\n      width: 2rem;\n      height: 2rem;\n      border-radius: 50%;\n      object-fit: cover;\n      margin: 0 auto 1rem auto;\n    }\n\n    /* Card: Title/Plan Name */\n    .ri-plan-card h4 {\n      font-size: var(--font-lg);\n      font-weight: 600;\n      margin-bottom: 0.5rem;\n      color: var(--color-black);\n    }\n\n    /* Card: Details (data usage, duration) */\n    .ri-plan-card__details {\n      font-size: var(--font-base);\n      color: var(--color-gray-700);\n      margin-bottom: 0.75rem;\n    }\n\n    /* Card: Price */\n    .ri-plan-card__price {\n      font-size: var(--font-xl);\n      font-weight: 700;\n      margin-bottom: 1rem;\n      color: var(--color-black);\n      display: block;\n    }\n\n    /* Card: Get eSIM Button */\n    .ri-plan-card__btn {\n      align-self: center;\n      margin-top: auto;\n      padding: 0.6rem 1.2rem;\n      background: var(--color-lime);\n      color: var(--color-black);\n      border: none;\n      border-radius: var(--radius);\n      font-size: var(--font-lg);\n      font-weight: 600;\n      text-decoration: none;\n      cursor: pointer;\n      transition: background 0.2s ease, transform 0.1s ease;\n    }\n    .ri-plan-card__btn:hover {\n      background: #B8D83B;\n      transform: scale(1.05);\n    }\n\n    /* ================================================\n       Responsive Utility\n    ================================================ */\n    @media (max-width: 600px) {\n      .ri-section-header h2 {\n        font-size: 1.25rem;\n      }\n      .coverage-box h3 {\n        font-size: 1.125rem;\n      }\n      .coverage-box p,\n      .ri-section-header p,\n      .ri-plan-card__details {\n        font-size: 0.9rem;\n      }\n    }\n  </style>\n</head>\n\n<body>\n  <div class=\"ri-container\">\n\n    <!-- 1) Coverage Explanation -->\n    <section class=\"coverage-box\">\n      <h3>Our Europe Coverage</h3>\n      <p>\n        Roamio’s Europe+ plans provide seamless data across <strong>35 European countries</strong>, including:\n        Austria, Belgium, Croatia, Czech Republic, Denmark, Finland, France, Germany, Greece, Hungary, Ireland,\n        Italy, Netherlands, Poland, Portugal, Spain, Sweden, Switzerland, United Kingdom, and more.\n      </p>\n      <p>\n        With automatic switching between 3G/4G and 5G, you stay connected wherever you travel. No hidden fees—one flat\n        rate covers all covered nations.\n      </p>\n    </section>\n\n    <!-- 2) Section Header for Regional Passes -->\n    <div class=\"ri-section-header\">\n      <h2>Regional Passes (Europe)</h2>\n      <p>One pass covers 42 European countries—trusted by 10K+ travelers worldwide.</p>\n    </div>\n\n    <!-- 3) Grid of Plan Cards -->\n    <div class=\"ri-grid\">\n      <!-- Card 1 -->\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/eu.png\" alt=\"Europe+ 5 GB – 30 Days\" />\n        <h4>Europe+ 5 GB – 30 Days</h4>\n        <p class=\"ri-plan-card__details\">5 GB · 30 days</p>\n        <span class=\"ri-plan-card__price\">$9.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"51135054414088\">\n          Get eSIM\n        </a>\n      </div>\n\n      <!-- Card 2 -->\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/eu.png\" alt=\"Europe+ 10 GB – 10 Days\" />\n        <h4>Europe+ 10 GB – 10 Days</h4>\n        <p class=\"ri-plan-card__details\">10 GB · 10 days</p>\n        <span class=\"ri-plan-card__price\">$12.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"51119976251656\">\n          Get eSIM\n        </a>\n      </div>\n\n      <!-- Card 3 -->\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/eu.png\" alt=\"Europe+ 10 GB – 30 Days\" />\n        <h4>Europe+ 10 GB – 30 Days</h4>\n        <p class=\"ri-plan-card__details\">10 GB · 30 days</p>\n        <span class=\"ri-plan-card__price\">$16.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"51119976284424\">\n          Get eSIM\n        </a>\n      </div>\n\n      <!-- Card 4 -->\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/eu.png\" alt=\"Europe+ 20 GB – 30 Days\" />\n        <h4>Europe+ 20 GB – 30 Days</h4>\n        <p class=\"ri-plan-card__details\">20 GB · 30 days</p>\n        <span class=\"ri-plan-card__price\">$25.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"51123523059976\">\n          Get eSIM\n        </a>\n      </div>\n\n      <!-- Card 5 -->\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/eu.png\" alt=\"Europe+ Unlimited – 30 Days\" />\n        <h4>Europe+ Unlimited – 30 Days</h4>\n        <p class=\"ri-plan-card__details\">Unlimited · 30 days</p>\n        <span class=\"ri-plan-card__price\">$49.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"51135054446856\">\n          Get eSIM\n        </a>\n      </div>\n\n      <!-- Card 6 -->\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/eu.png\" alt=\"Europe+ 1 GB – 5 Days\" />\n        <h4>Europe+ 1 GB – 5 Days</h4>\n        <p class=\"ri-plan-card__details\">1 GB · 5 days</p>\n        <span class=\"ri-plan-card__price\">$1.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"51464254816520\">\n          Get eSIM\n        </a>\n      </div>\n    </div>\n  </div>\n\n  <!-- ================================================\n       Checkout Redirection Script\n  ================================================ -->\n  <script>\n    document.querySelectorAll('.ri-plan-card__btn').forEach((btn) => {\n      btn.addEventListener('click', (e) => {\n        e.preventDefault();\n        const variantId = btn.getAttribute('data-variant-id');\n        if (!variantId) {\n          alert('Missing data-variant-id.');\n          return;\n        }\n        // Redirect straight to checkout\n        window.location.href = `/cart/${variantId}:1?checkout`;\n      });\n    });\n  </script>\n</body>\n</html>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "product-title-md",
+            "title_size_mobile": "product-title-md",
+            "show_price": true,
+            "show_rating": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "text_size": "text-base"
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "heading": "Hurry up!",
+            "subheading": "Sale end in:",
+            "color_text": "#e11d48",
+            "color_background": "#fff1f2",
+            "gradient_background": ""
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "show_variant_labels": true,
+            "picker_type": "button",
+            "enable_color_swatches": true,
+            "color_swatch_type": "color",
+            "size_chart": "esim"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_price": true,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true,
+            "enable_back_in_stock": false,
+            "show_back_in_stock_name": true,
+            "show_back_in_stock_phone": false
+          }
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share",
+            "show_help_desk": true,
+            "help_label": "Need help?",
+            "help_type": "drawer",
+            "help_page": ""
+          }
+        },
+        "complementary": {
+          "type": "complementary",
+          "settings": {
+            "heading": "Pairs well with",
+            "product_limit": 4,
+            "show_vendor": false,
+            "show_price": true
+          }
+        },
+        "sticky_buy_button": {
+          "type": "sticky_buy_button",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "description",
+        "countdown",
+        "variant_picker",
+        "buy_buttons",
+        "pickup_availability",
+        "share",
+        "complementary",
+        "sticky_buy_button"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": 66,
+        "gallery_layout": "scroll",
+        "thumbnail_position": "beside",
+        "image_ratio": "adapt_first",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_autoplay": true,
+        "enable_video_looping": true,
+        "mobile_layout": "full_width",
+        "image_ratio_mobile": "adapt_first",
+        "mobile_thumbnail": false,
+        "padding_top": 0,
+        "padding_bottom": 84,
+        "divider": false,
+        "full_width": true,
+        "rounded": false
+      }
+    },
+    "help-drawer": {
+      "type": "help-drawer",
+      "blocks": {
+        "content-1": {
+          "type": "content",
+          "settings": {
+            "icon": "rocket",
+            "heading": "Shipping Information",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#b45309",
+            "color_background": "#fffbeb",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        },
+        "content-2": {
+          "type": "content",
+          "settings": {
+            "icon": "headphone",
+            "heading": "Customer Support",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#0369a1",
+            "color_background": "#f0f9ff",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        },
+        "content-3": {
+          "type": "content",
+          "settings": {
+            "icon": "chat_bubble",
+            "heading": "FAQ’s",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#be123c",
+            "color_background": "#fff1f2",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        },
+        "content-4": {
+          "type": "content",
+          "settings": {
+            "icon": "phone",
+            "heading": "Contact Us",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#4d7c0f",
+            "color_background": "#f7fee7",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        }
+      },
+      "block_order": [
+        "content-1",
+        "content-2",
+        "content-3",
+        "content-4"
+      ],
+      "settings": {
+        "heading": "Need help?",
+        "description": "<p>If you have any questions, you are always welcome to contact us. We'll get back to you as soon as possible, within 24 hours on weekdays.</p>"
+      }
+    },
+    "scrolling-text": {
+      "type": "scrolling-text",
+      "settings": {
+        "direction": "left",
+        "speed": 20,
+        "grid_horizontal": 70,
+        "enable_twin": false,
+        "enable_parallax": true,
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "divider": false,
+        "rounded": false
+      }
+    },
+    "product-details": {
+      "type": "product-details",
+      "blocks": {
+        "collapsible_tab-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Activation",
+            "content": "<p>Activating your Roamio eSIM is fast and stress-free — no paperwork, no delays.</p><p><br/><strong>1. Choose your plan</strong> – Pick the region and data package that suits your trip.<br/><br/><strong>2. Receive your QR code instantly </strong>– Sent directly to your email after purchase.<br/><br/><strong> 3. Activate in seconds</strong> – Scan the QR from your device settings and connect instantly.<br/></p><p>⚡ <em>Instant delivery</em><br/><br/>📱 <em>iPhone, Samsung, Pixel & more supported</em><br/><br/>💬 <em>Need help? We're fast to respond and always here for you.</em></p>",
+            "metafields": ""
+          }
+        },
+        "collapsible_tab-2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Coverage",
+            "content": "<p>Your Roamio eSIM connects you in over 130 countries with top-tier local networks.</p><p>Europe, North America, Latin America, Asia, Africa, Oceania — we’ve got you covered.<br/><br/>Get reliable, high-speed internet wherever you land.<br/><br/>Built for travelers, digital nomads, and remote workers.</p><p>Powered by premium carriers — no weak signals or shady networks.</p>",
+            "metafields": ""
+          }
+        },
+        "collapsible_tab-3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Benefits",
+            "content": "",
+            "metafields": ""
+          }
+        },
+        "collapsible_tab-4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Customer service",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "metafields": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab-1",
+        "collapsible_tab-2",
+        "collapsible_tab-3",
+        "collapsible_tab-4"
+      ],
+      "settings": {
+        "style": "with-border",
+        "open_first_row": true,
+        "specifications_heading": "",
+        "heading": "Our eSIM",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#000000",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "question-1": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-3": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "contact": {
+          "type": "contact",
+          "settings": {
+            "heading": "Didn’t find your answer?",
+            "text": "<p>Don't hestitate to contact us</p>",
+            "show_phone": false,
+            "avatar_height": 60,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "question-1",
+        "question-2",
+        "question-3",
+        "contact"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "with-background",
+        "heading": "FAQs",
+        "heading_size": "title-lg tracking-heading",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "<p>Please read our <a href=\"#\" title=\"FAQ's\">FAQs</a> page to find out more.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#ffffff",
+        "color_background": "#171717",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#ffffff",
+        "overlay_opacity": 4,
+        "padding_top": 84,
+        "padding_bottom": 84,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "You may also like",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": true
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Recently Viewed",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_MTEMaT",
+    "main-product",
+    "help-drawer",
+    "scrolling-text",
+    "product-details",
+    "faq",
+    "product-recommendations",
+    "recently-viewed"
+  ]
+}

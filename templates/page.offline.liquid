@@ -1,0 +1,146 @@
+{%- comment -%}
+  Offline Page Template
+  - Shown when user is offline
+  - Includes cached content
+  - Provides offline functionality
+{%- endcomment -%}
+
+<div class="page-width page-content">
+  <div class="grid">
+    <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+      <div class="section-header text-center">
+        <svg class="icon icon--full-color" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M1 1l22 22M1 23L23 1M12 12v.01"/>
+        </svg>
+        <h1 class="section-header__title h2">You're Offline</h1>
+      </div>
+
+      <div class="rte text-center">
+        <p>It looks like you've lost your internet connection. Don't worry - you can still access some features:</p>
+        
+        <div class="offline-features grid">
+          <div class="grid__item one-half">
+            <div class="feature-card">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/>
+                <path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/>
+                <path d="M18 12a2 2 0 0 0 0 4"/>
+              </svg>
+              <h3>Cached Pages</h3>
+              <p>Previously visited pages are available offline</p>
+            </div>
+          </div>
+
+          <div class="grid__item one-half">
+            <div class="feature-card">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+              <h3>Saved Data</h3>
+              <p>Your cart and preferences are safely stored</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="offline-actions">
+          <button type="button" class="btn" onclick="window.location.reload()">
+            <span class="btn__text">Try Again</span>
+          </button>
+          
+          <a href="/" class="btn btn--secondary">
+            <span class="btn__text">Go to Homepage</span>
+          </a>
+        </div>
+
+        <div class="offline-help">
+          <p>Need immediate assistance? Our support is available at:</p>
+          <p class="h4">+1 (555) 123-4567</p>
+          <p>Or email us when you're back online:</p>
+          <p class="h4">support@roamiomobile.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .offline-features {
+    margin: 4rem 0;
+  }
+
+  .feature-card {
+    padding: 2rem;
+    background: rgba(var(--color-background), 0.05);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .feature-card svg {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    margin: 1rem 0;
+    font-size: 1.8rem;
+  }
+
+  .feature-card p {
+    margin: 0;
+    font-size: 1.4rem;
+    opacity: 0.8;
+  }
+
+  .offline-actions {
+    margin: 4rem 0;
+  }
+
+  .offline-actions .btn {
+    margin: 0 1rem 1rem;
+  }
+
+  .offline-help {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(var(--color-border), 0.2);
+  }
+
+  .offline-help p {
+    margin: 0.5rem 0;
+  }
+
+  .offline-help .h4 {
+    color: var(--color-primary);
+    margin: 0.5rem 0 2rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    .grid__item.one-half {
+      width: 100%;
+    }
+
+    .offline-actions .btn {
+      width: 100%;
+      margin: 0 0 1rem;
+    }
+  }
+</style>
+
+<script>
+  // Check connection status
+  function updateOnlineStatus() {
+    const statusDisplay = document.querySelector('.section-header__title');
+    if (navigator.onLine) {
+      statusDisplay.textContent = "You're Back Online!";
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    } else {
+      statusDisplay.textContent = "You're Offline";
+    }
+  }
+
+  window.addEventListener('online', updateOnlineStatus);
+  window.addEventListener('offline', updateOnlineStatus);
+</script> 

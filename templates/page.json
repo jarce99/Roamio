@@ -1,0 +1,69 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "text_size": "text-sm",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "custom_liquid_iJdBqJ": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "liquid": "<style>\n  .roamio-container {\n    max-width: 1200px;\n    margin: auto;\n    padding: 2rem 1rem;\n    font-family: 'Inter', sans-serif;\n    color: #333;\n  }\n\n  .roamio-header {\n    text-align: center;\n    margin-bottom: 2rem;\n  }\n\n  .roamio-header h2 {\n    font-size: 2.4rem;\n    font-weight: 700;\n    margin-bottom: 0.5rem;\n  }\n\n  .roamio-header p {\n    font-size: 1.1rem;\n    color: #555;\n  }\n\n  .roamio-info-box {\n    background-color: #f5f9ff;\n    border-left: 4px solid #007bff;\n    padding: 1rem 1.5rem;\n    margin-bottom: 2rem;\n    border-radius: 10px;\n    font-size: 0.95rem;\n  }\n\n  .roamio-grid {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n    gap: 1.5rem;\n  }\n\n  .roamio-card {\n    border: 1px solid #e0e0e0;\n    border-radius: 16px;\n    padding: 1.5rem;\n    background-color: #fff;\n    text-align: center;\n    box-shadow: 0 4px 10px rgba(0,0,0,0.05);\n    transition: all 0.3s ease;\n    position: relative;\n  }\n\n  .roamio-card:hover {\n    transform: translateY(-5px);\n    box-shadow: 0 8px 20px rgba(0,0,0,0.08);\n  }\n\n  .roamio-badge {\n    position: absolute;\n    top: -12px;\n    left: 50%;\n    transform: translateX(-50%);\n    background-color: #007bff;\n    color: white;\n    padding: 0.2rem 0.8rem;\n    border-radius: 8px;\n    font-size: 0.8rem;\n    font-weight: 600;\n  }\n\n  .roamio-data {\n    font-size: 1.3rem;\n    font-weight: 600;\n    margin-bottom: 0.3rem;\n  }\n\n  .roamio-days {\n    font-size: 1rem;\n    color: #777;\n    margin-bottom: 1rem;\n  }\n\n  .roamio-price {\n    font-size: 1.7rem;\n    font-weight: bold;\n    color: #222;\n    margin-bottom: 1rem;\n  }\n\n  .roamio-button {\n    background: linear-gradient(135deg, #007bff, #0056b3);\n    color: white;\n    padding: 0.8rem 1.4rem;\n    border-radius: 10px;\n    text-decoration: none;\n    font-weight: 600;\n    font-size: 1rem;\n    transition: background 0.3s ease;\n    display: inline-block;\n  }\n\n  .roamio-button:hover {\n    background: linear-gradient(135deg, #0056b3, #003d80);\n  }\n</style>\n\n<div class=\"roamio-container\">\n  <div class=\"roamio-header\">\n    <h2>🇪🇺 Europe eSIM Plans by Roamio</h2>\n    <p>Stay connected across Europe with fast, reliable, and contract-free data — activated in minutes with QR delivery!</p>\n  </div>\n\n  <div class=\"roamio-info-box\">\n    ✔️ Instant QR code email delivery · 🛫 Perfect for travelers · 💳 One-time payment · 🛰️ Works in 36+ countries · No roaming fees\n  </div>\n\n  <div class=\"roamio-grid\">\n    <!-- Replace VARIANT_ID_xxx with your real Shopify variant IDs -->\n\n    <div class=\"roamio-card\">\n      <div class=\"roamio-data\">5 GB</div>\n      <div class=\"roamio-days\">Valid for 30 days</div>\n      <div class=\"roamio-price\">$11.99</div>\n      <a class=\"roamio-button\" href=\"/cart/VARIANT_ID_5GB:1\">Buy Now</a>\n    </div>\n\n    <div class=\"roamio-card\">\n      <div class=\"roamio-data\">10 GB</div>\n      <div class=\"roamio-days\">Valid for 10 days</div>\n      <div class=\"roamio-price\">$15.99</div>\n      <a class=\"roamio-button\" href=\"/cart/VARIANT_ID_10GB_10:1\">Buy Now</a>\n    </div>\n\n    <div class=\"roamio-card\">\n      <div class=\"roamio-data\">10 GB</div>\n      <div class=\"roamio-days\">Valid for 30 days</div>\n      <div class=\"roamio-price\">$17.99</div>\n      <a class=\"roamio-button\" href=\"/cart/VARIANT_ID_10GB_30:1\">Buy Now</a>\n    </div>\n\n    <div class=\"roamio-card\">\n      <div class=\"roamio-data\">20 GB</div>\n      <div class=\"roamio-days\">Valid for 15 days</div>\n      <div class=\"roamio-price\">$23.99</div>\n      <a class=\"roamio-button\" href=\"/cart/VARIANT_ID_20GB_15:1\">Buy Now</a>\n    </div>\n\n    <div class=\"roamio-card\">\n      <div class=\"roamio-data\">20 GB</div>\n      <div class=\"roamio-days\">Valid for 30 days</div>\n      <div class=\"roamio-price\">$23.99</div>\n      <a class=\"roamio-button\" href=\"/cart/VARIANT_ID_20GB_30:1\">Buy Now</a>\n    </div>\n\n    <div class=\"roamio-card\">\n      <div class=\"roamio-data\">Unlimited</div>\n      <div class=\"roamio-days\">Valid for 10 days</div>\n      <div class=\"roamio-price\">$27.99</div>\n      <a class=\"roamio-button\" href=\"/cart/VARIANT_ID_UNLIMITED_10:1\">Buy Now</a>\n    </div>\n\n    <div class=\"roamio-card\">\n      <div class=\"roamio-data\">Unlimited</div>\n      <div class=\"roamio-days\">Valid for 15 days</div>\n      <div class=\"roamio-price\">$39.99</div>\n      <a class=\"roamio-button\" href=\"/cart/VARIANT_ID_UNLIMITED_15:1\">Buy Now</a>\n    </div>\n\n    <div class=\"roamio-card\">\n      <div class=\"roamio-badge\">Best Value</div>\n      <div class=\"roamio-data\">Unlimited</div>\n      <div class=\"roamio-days\">Valid for 30 days</div>\n      <div class=\"roamio-price\">$49.99</div>\n      <a class=\"roamio-button\" href=\"/cart/VARIANT_ID_UNLIMITED_30:1\">Buy Now</a>\n    </div>\n  </div>\n</div>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "custom_liquid_3pz9KE": {
+      "type": "custom-liquid",
+      "settings": {
+        "liquid": "",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "custom_liquid_iJdBqJ",
+    "custom_liquid_3pz9KE"
+  ]
+}

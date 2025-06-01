@@ -1,0 +1,244 @@
+  {% schema %}
+{
+  "name": "FAQ eSIM",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "title-sm",
+          "label": "Small"
+        },
+        {
+          "value": "title-md",
+          "label": "Medium"
+        },
+        {
+          "value": "title-lg tracking-heading",
+          "label": "Large"
+        },
+        {
+          "value": "title-xl tracking-heading",
+          "label": "Extra Large"
+        }
+      ],
+      "default": "title-lg tracking-heading",
+      "label": "Heading Size"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is an eSIM?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>An eSIM (embedded SIM) is a digital SIM that allows you to activate a cellular plan without using a physical SIM card.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ eSIM",
+      "blocks": [
+        {
+          "type": "faq"
+        },
+        {
+          "type": "faq"
+        },
+        {
+          "type": "faq"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.faq-section {
+  background: linear-gradient(135deg, #f0fff4 0%, #ebf8ff 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.faq-question {
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border: none;
+  color: #2F855A;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: #f0fff4;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  padding: 0 1.5rem;
+  background: white;
+  color: #4A5568;
+}
+
+.faq-answer.active {
+  max-height: 500px;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+  background: #48BB78;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.faq-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: white;
+}
+
+.faq-icon.active {
+  transform: rotate(45deg);
+  background: #38A169;
+}
+
+.faq-heading {
+  color: #2F855A;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+.faq-heading:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(90deg, #48BB78 0%, #38A169 100%);
+  border-radius: 2px;
+}
+</style>
+
+<div class="page-width">
+  <div class="faq-section">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="{{ section.settings.heading_size }} faq-heading">
+        {{ section.settings.heading }}
+      </h2>
+    {%- endif -%}
+
+    <div class="faq-container" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'faq' -%}
+            <div class="faq-item" {{ block.shopify_attributes }}>
+              <button class="faq-question" aria-expanded="false">
+                <span>{{ block.settings.question }}</span>
+                <span class="faq-icon">{% render 'icon-plus' %}</span>
+              </button>
+              <div class="faq-answer">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+        const answer = this.nextElementSibling;
+        const icon = this.querySelector('.faq-icon');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        // Close all other FAQs
+        faqQuestions.forEach(q => {
+          if (q !== question) {
+            q.setAttribute('aria-expanded', 'false');
+            q.nextElementSibling.classList.remove('active');
+            q.querySelector('.faq-icon').classList.remove('active');
+          }
+        });
+        
+        // Toggle current FAQ
+        this.setAttribute('aria-expanded', !isExpanded);
+        answer.classList.toggle('active');
+        icon.classList.toggle('active');
+      });
+    });
+  });
+</script> 

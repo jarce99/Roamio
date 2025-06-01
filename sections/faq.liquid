@@ -1,0 +1,419 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --section-padding-top: {{ section.settings.padding_top }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+    font-family: 'Inter', sans-serif;
+    {%- render 'section-variables', section: section -%}
+  }
+
+  .review-summary {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .review-stars {
+    color: #D7F848;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .review-rating {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 0.5rem;
+  }
+
+  .review-count {
+    color: #4A5568;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .review-badge {
+    display: inline-block;
+    background: rgba(215, 248, 72, 0.2);
+    color: #000000;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .faq-search {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+  }
+
+  .faq-search input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid #D7F848;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: white;
+    transition: all 0.3s ease;
+  }
+
+  .faq-search input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(215, 248, 72, 0.3);
+  }
+
+  .faq-search-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+    opacity: 0.5;
+  }
+
+  .faqs.with-background {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+  }
+
+  .accordion {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .accordion:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .details__summary {
+    padding: 1.5rem;
+    background: white;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+  }
+
+  .details__summary:hover {
+    background: rgba(215, 248, 72, 0.1);
+  }
+
+  .details__summary span {
+    color: #000000;
+    font-weight: 500;
+  }
+
+  .details[open] .details__summary {
+    border-bottom: 1px solid rgba(215, 248, 72, 0.3);
+  }
+
+  .details__content {
+    padding: 1.5rem;
+    color: #4A5568;
+    background: white;
+    line-height: 1.6;
+  }
+
+  .icon {
+    background: #D7F848;
+    border-radius: 50%;
+    padding: 4px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .icon svg {
+    stroke: #000000;
+    transition: transform 0.3s ease;
+  }
+
+  .details[open] .icon svg {
+    transform: rotate(45deg);
+  }
+
+  .heading {
+    color: #000000;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .faq-description {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    color: #4A5568;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 767px) {
+    .faqs.with-background {
+      padding: 1rem;
+    }
+    
+    .details__summary {
+      padding: 1.25rem;
+    }
+    
+    .details__content {
+      padding: 1.25rem;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}{% if section.settings.style == 'with-background' %} section--plain{% endif %}">
+  <div class="page-width{% if section.settings.narrow %} page-width--narrow{% endif %} relative">
+    <div class="review-summary">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-rating">4.8</div>
+      <div class="review-count">Based on 1000+ verified reviews</div>
+      <div class="review-badge">Trusted by travelers worldwide</div>
+    </div>
+
+    <h1 class="heading {{ section.settings.heading_size }}" id="faq-heading">
+      Frequently Asked Questions About Roamio eSIM
+    </h1>
+    
+    <div class="faq-description">
+      <meta name="description" content="Get instant answers about Roamio eSIM - Learn about installation, compatibility, international coverage, and 24/7 support. Join 1000+ satisfied travelers using Roamio eSIM for seamless global connectivity.">
+      Get quick answers about Roamio eSIM installation, compatibility, and global coverage. Our 24/7 support team is here to help you stay connected worldwide.
+    </div>
+
+    <div class="faq-search" role="search" aria-labelledby="faq-search-label">
+      <label id="faq-search-label" class="sr-only">Search Frequently Asked Questions</label>
+      <input 
+        type="text" 
+        placeholder="Search FAQs..." 
+        id="faqSearch" 
+        aria-label="Search FAQs"
+        autocomplete="off"
+      >
+      <span class="faq-search-icon" aria-hidden="true">
+        {%- render 'icon-search' -%}
+      </span>
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="faqs {{ section.settings.style }} flex flex-col lg:flex-row relative z-1">
+        <div class="grow grid gap-8 md:gap-12">
+          <div class="faq" role="list" aria-labelledby="faq-heading">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'question' -%}
+                  <div class="accordion faq-item" data-question="{{ block.settings.title | downcase }}" {{ block.shopify_attributes }} role="listitem">
+                    <details class="details" is="accordion-details">
+                      <summary class="details__summary flex items-center justify-between gap-2 cursor-pointer">
+                        <span class="text-base lg:text-lg xl:text-xl">{{ block.settings.title }}</span>
+                        <span class="faq-icon" aria-hidden="true">{%- render 'icon-plus' -%}</span>
+                      </summary>
+                      <div class="details__content text-base">
+                        {{ block.settings.text }}
+                      </div>
+                    </details>
+                  </div>
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- assign question_blocks = section.blocks | where: 'type', 'question' -%}
+{%- if question_blocks.size > 0 -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- for block in question_blocks -%}
+          {
+            "@type": "Question",
+            "name": {{ block.settings.title | json }},
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": {{ block.settings.text | strip_html | json }}
+            }
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor -%}
+      ]
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Roamio eSIM",
+      "description": "Global eSIM for seamless international connectivity",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1000",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  </script>
+{%- endif -%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('faqSearch');
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    // Enhance search functionality
+    searchInput.addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      
+      faqItems.forEach(item => {
+        const question = item.getAttribute('data-question');
+        const answer = item.querySelector('.details__content').textContent.toLowerCase();
+        const isMatch = question.includes(searchTerm) || answer.includes(searchTerm);
+        item.style.display = isMatch ? 'block' : 'none';
+      });
+    });
+
+    // Track FAQ interactions for analytics
+    faqItems.forEach(item => {
+      const details = item.querySelector('details');
+      details.addEventListener('toggle', function() {
+        if (this.open) {
+          const question = item.querySelector('summary span').textContent;
+          // You can integrate with your analytics here
+          console.log('FAQ opened:', question);
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "FAQ with Reviews",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "with-border",
+          "label": "With border"
+        },
+        {
+          "value": "with-background",
+          "label": "With background"
+        }
+      ],
+      "default": "with-background"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "title-sm",
+          "label": "Small"
+        },
+        {
+          "value": "title-md",
+          "label": "Medium"
+        },
+        {
+          "value": "title-lg",
+          "label": "Large"
+        },
+        {
+          "value": "title-xl",
+          "label": "Extra Large"
+        }
+      ],
+      "default": "title-lg",
+      "label": "Heading size"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 72
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "FAQ Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question",
+          "default": "What is an eSIM and how does it work?"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Answer",
+          "default": "<p>An eSIM (embedded SIM) is a digital SIM card built into your device. It lets you activate a mobile data plan instantly without needing a physical SIM card. With Roamio eSIMs, you can get connected in seconds and easily switch between data plans as needed.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ with Reviews",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "title": "What is an eSIM and how does it work?",
+            "text": "<p>An eSIM (embedded SIM) is a digital SIM card built into your device. It lets you activate a mobile data plan instantly without needing a physical SIM card. With Roamio eSIMs, you can get connected in seconds and easily switch between data plans as needed.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "title": "How do I install my eSIM after purchase?",
+            "text": "<p>Installing your Roamio eSIM is quick and easy:<br>1. Open the email with your QR code<br>2. Go to your phone's Settings > Cellular/Mobile Data<br>3. Tap 'Add eSIM' or 'Add Data Plan'<br>4. Scan the QR code<br>5. Follow the on-screen instructions<br><br>The whole process takes less than 2 minutes!</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "title": "Is my phone compatible with Roamio eSIMs?",
+            "text": "<p>Most recent smartphones support eSIM technology, including:<br>- iPhone XS or newer<br>- Google Pixel 3 or newer<br>- Samsung Galaxy S20 or newer<br>- Many other modern Android devices<br><br>Check your device settings for 'Add eSIM' or 'Add Data Plan' options to confirm compatibility.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

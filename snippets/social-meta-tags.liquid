@@ -1,0 +1,55 @@
+{%- comment -%}
+  Social Meta Tags Snippet
+  Improves social sharing appearance across platforms
+{%- endcomment -%}
+
+{%- assign og_title = page_title | default: shop.name -%}
+{%- assign og_description = page_description | default: shop.description | default: shop.name -%}
+{%- assign og_image = settings.share_image | default: settings.logo -%}
+{%- assign og_type = 'website' -%}
+
+{%- if template contains 'product' -%}
+  {%- assign og_type = 'product' -%}
+  {%- assign og_title = product.title -%}
+  {%- assign og_description = product.description | strip_html | truncatewords: 120 -%}
+  {%- assign og_image = product.featured_media.preview_image -%}
+{%- elsif template contains 'article' -%}
+  {%- assign og_type = 'article' -%}
+  {%- assign og_title = article.title -%}
+  {%- assign og_description = article.excerpt_or_content | strip_html | truncatewords: 120 -%}
+  {%- assign og_image = article.image -%}
+{%- endif -%}
+
+<meta property="og:site_name" content="{{ shop.name }}">
+<meta property="og:url" content="{{ canonical_url | default: shop.url }}">
+<meta property="og:title" content="{{ og_title }}">
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:description" content="{{ og_description }}">
+
+{%- if og_image -%}
+  <meta property="og:image" content="{{ og_image | img_url: '1200x1200', crop: 'center' }}">
+  <meta property="og:image:secure_url" content="{{ og_image | img_url: '1200x1200', crop: 'center' }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+{%- endif -%}
+
+{%- if template contains 'product' -%}
+  <meta property="product:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
+  <meta property="product:price:currency" content="{{ cart.currency.iso_code }}">
+{%- endif -%}
+
+{%- if template contains 'article' -%}
+  <meta property="article:published_time" content="{{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' }}">
+  <meta property="article:author" content="{{ article.author }}">
+{%- endif -%}
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ og_title }}">
+<meta name="twitter:description" content="{{ og_description }}">
+{%- if og_image -%}
+  <meta name="twitter:image" content="{{ og_image | img_url: '1200x600', crop: 'center' }}">
+{%- endif -%}
+
+{%- if settings.social_twitter_link != blank -%}
+  <meta name="twitter:site" content="{{ settings.social_twitter_link | split: 'twitter.com/' | last }}">
+{%- endif -%}

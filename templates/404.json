@@ -1,0 +1,122 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_Dg6Yqa": {
+      "type": "custom-liquid",
+      "settings": {
+        "liquid": "<div class=\"esim-latam-section\">\n  <div class=\"flag-row\">\n    <img src=\"https://flagcdn.com/w40/mx.png\" alt=\"Mexico\" title=\"Mexico\" />\n    <img src=\"https://flagcdn.com/w40/ar.png\" alt=\"Argentina\" title=\"Argentina\" />\n    <img src=\"https://flagcdn.com/w40/br.png\" alt=\"Brazil\" title=\"Brazil\" />\n    <img src=\"https://flagcdn.com/w40/cl.png\" alt=\"Chile\" title=\"Chile\" />\n    <img src=\"https://flagcdn.com/w40/co.png\" alt=\"Colombia\" title=\"Colombia\" />\n    <img src=\"https://flagcdn.com/w40/pe.png\" alt=\"Peru\" title=\"Peru\" />\n    <img src=\"https://flagcdn.com/w40/uy.png\" alt=\"Uruguay\" title=\"Uruguay\" />\n    <img src=\"https://flagcdn.com/w40/pa.png\" alt=\"Panama\" title=\"Panama\" />\n    <img src=\"https://flagcdn.com/w40/ec.png\" alt=\"Ecuador\" title=\"Ecuador\" />\n    <img src=\"https://flagcdn.com/w40/cr.png\" alt=\"Costa Rica\" title=\"Costa Rica\" />\n  </div>\n  <h2>eSIM Packages for Latin America</h2>\n  <p>Reliable data in Latin American countries. Easy, fast, and completely digital. Choose your plan and connect instantly.</p>\n\n  <div class=\"esim-grid\">\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"latam-esim\" data-variant-id=\"51121900617992\">\n      <h3>1 GB</h3>\n      <p>7 days</p>\n      <strong>USD 4.49</strong>\n    </label>\n\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"latam-esim\" data-variant-id=\"51121900650760\">\n      <h3>3 GB</h3>\n      <p>15 days</p>\n      <strong>USD 11.49</strong>\n    </label>\n\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"latam-esim\" data-variant-id=\"51121900683528\">\n      <h3>5 GB</h3>\n      <p>30 days</p>\n      <strong>USD 17.99</strong>\n    </label>\n\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"latam-esim\" data-variant-id=\"51121900716296\">\n      <h3>10 GB</h3>\n      <p>30 days</p>\n      <strong>USD 29.99</strong>\n    </label>\n\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"latam-esim\" data-variant-id=\"51121900749064\">\n      <h3>Unlimited</h3>\n      <p>15 days</p>\n      <strong>USD 39.99</strong>\n    </label>\n  </div>\n\n  <button class=\"add-to-cart-btn\" onclick=\"addToCartLatam()\">🛒 Buy Now</button>\n</div>\n\n<script>\nfunction addToCartLatam() {\n  const selected = document.querySelector('input[name=\"latam-esim\"]:checked');\n  if (!selected) return alert('Please select a plan');\n  const variantId = selected.getAttribute('data-variant-id');\n\n  fetch('/cart/add.js', {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify({\n      id: variantId,\n      quantity: 1\n    })\n  })\n  .then(response => response.json())\n  .then(data => {\n    window.location.href = '/cart';\n  })\n  .catch(err => alert('Error adding to cart'));\n}\n</script>\n\n<style>\n.esim-latam-section {\n  font-family: Inter, sans-serif;\n  margin: 60px 0;\n  text-align: center;\n}\n\n.flag-row {\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  gap: 10px;\n  margin-bottom: 20px;\n}\n\n.flag-row img {\n  width: 40px;\n  height: auto;\n  border-radius: 4px;\n  box-shadow: 0 1px 4px rgba(0,0,0,0.1);\n}\n\n.esim-latam-section h2 {\n  font-size: 2rem;\n  font-weight: 700;\n  margin-bottom: 10px;\n}\n\n.esim-latam-section p {\n  color: #555;\n  margin-bottom: 30px;\n}\n\n.esim-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));\n  gap: 16px;\n  justify-items: center;\n  margin-bottom: 30px;\n}\n\n.esim-card {\n  background: #fefefe;\n  border: 2px solid #ddd;\n  border-radius: 16px;\n  padding: 18px;\n  width: 100%;\n  max-width: 220px;\n  text-align: left;\n  transition: border 0.2s ease, box-shadow 0.2s ease;\n  cursor: pointer;\n  box-shadow: 0 1px 5px rgba(0,0,0,0.04);\n}\n\n.esim-card:hover {\n  border-color: #111;\n  box-shadow: 0 4px 12px rgba(0,0,0,0.08);\n}\n\n.esim-card input[type=\"radio\"] {\n  appearance: none;\n  border: 2px solid #000;\n  border-radius: 50%;\n  width: 18px;\n  height: 18px;\n  margin-bottom: 8px;\n  position: relative;\n}\n\n.esim-card input[type=\"radio\"]:checked::before {\n  content: \"\";\n  position: absolute;\n  top: 4px;\n  left: 4px;\n  width: 8px;\n  height: 8px;\n  background: #000;\n  border-radius: 50%;\n}\n\n.esim-card h3 {\n  margin: 8px 0 4px;\n  font-size: 1rem;\n  font-weight: 700;\n}\n\n.esim-card p {\n  color: #777;\n  margin-bottom: 6px;\n  font-size: 0.85rem;\n}\n\n.esim-card strong {\n  color: #000;\n  font-weight: 700;\n  font-size: 0.95rem;\n}\n\n.add-to-cart-btn {\n  background-color: #000;\n  color: #fff;\n  border: none;\n  padding: 12px 24px;\n  border-radius: 24px;\n  font-size: 0.95rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.3s ease;\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n}\n\n.add-to-cart-btn:hover {\n  background-color: #333;\n}\n</style>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "main-404": {
+      "type": "main-404",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "heading_size": "title-xl tracking-heading",
+        "heading_tag": "h1",
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_UGFXfd": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_dMpfey": {
+          "type": "heading",
+          "settings": {
+            "heading": "Rich text",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_Q8ehTn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_VFcjUV": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_dMpfey",
+        "text_Q8ehTn",
+        "button_VFcjUV"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 100,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_Dg6Yqa",
+    "main-404",
+    "rich_text_UGFXfd"
+  ]
+}

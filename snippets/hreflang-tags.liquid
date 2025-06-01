@@ -1,0 +1,129 @@
+{%- comment -%}
+  Hreflang Tags for International SEO
+  - Handles multiple language/region versions
+  - Implements x-default
+  - Supports regional targeting
+{%- endcomment -%}
+
+{%- liquid
+  assign current_url = canonical_url | split: '?' | first
+  assign current_handle = template.name
+  assign current_locale = request.locale.iso_code
+-%}
+
+{%- comment -%}Default hreflang for main site{%- endcomment -%}
+<link rel="alternate" href="{{ current_url }}" hreflang="x-default">
+
+{%- comment -%}Spanish (LATAM) hreflang{%- endcomment -%}
+<link rel="alternate" href="{{ current_url | replace: shop.domain, 'es-latam.' | append: shop.domain }}" hreflang="es-419">
+
+{%- comment -%}Spanish (Spain) hreflang{%- endcomment -%}
+<link rel="alternate" href="{{ current_url | replace: shop.domain, 'es.' | append: shop.domain }}" hreflang="es-ES">
+
+{%- comment -%}Portuguese (Brazil) hreflang{%- endcomment -%}
+<link rel="alternate" href="{{ current_url | replace: shop.domain, 'pt-br.' | append: shop.domain }}" hreflang="pt-BR">
+
+{%- comment -%}English (US) hreflang{%- endcomment -%}
+<link rel="alternate" href="{{ current_url }}" hreflang="en-US">
+
+{%- comment -%}English (UK) hreflang{%- endcomment -%}
+<link rel="alternate" href="{{ current_url | replace: shop.domain, 'uk.' | append: shop.domain }}" hreflang="en-GB">
+
+{%- comment -%}German hreflang{%- endcomment -%}
+<link rel="alternate" href="{{ current_url | replace: shop.domain, 'de.' | append: shop.domain }}" hreflang="de">
+
+{%- comment -%}French hreflang{%- endcomment -%}
+<link rel="alternate" href="{{ current_url | replace: shop.domain, 'fr.' | append: shop.domain }}" hreflang="fr">
+
+{%- comment -%}Italian hreflang{%- endcomment -%}
+<link rel="alternate" href="{{ current_url | replace: shop.domain, 'it.' | append: shop.domain }}" hreflang="it">
+
+{%- comment -%}Region-specific meta tags{%- endcomment -%}
+{%- case current_locale -%}
+  {%- when 'es-419' -%}
+    <meta name="geo.region" content="419">
+    <meta name="geo.position" content="19.4326;-99.1332">
+    <meta name="ICBM" content="19.4326, -99.1332">
+  {%- when 'es-ES' -%}
+    <meta name="geo.region" content="ES">
+    <meta name="geo.position" content="40.4168;-3.7038">
+    <meta name="ICBM" content="40.4168, -3.7038">
+  {%- when 'pt-BR' -%}
+    <meta name="geo.region" content="BR">
+    <meta name="geo.position" content="-15.7975;-47.8919">
+    <meta name="ICBM" content="-15.7975, -47.8919">
+  {%- when 'en-US' -%}
+    <meta name="geo.region" content="US">
+    <meta name="geo.position" content="37.0902;-95.7129">
+    <meta name="ICBM" content="37.0902, -95.7129">
+  {%- when 'en-GB' -%}
+    <meta name="geo.region" content="GB">
+    <meta name="geo.position" content="51.5074;-0.1278">
+    <meta name="ICBM" content="51.5074, -0.1278">
+  {%- when 'de' -%}
+    <meta name="geo.region" content="DE">
+    <meta name="geo.position" content="51.1657;10.4515">
+    <meta name="ICBM" content="51.1657, 10.4515">
+  {%- when 'fr' -%}
+    <meta name="geo.region" content="FR">
+    <meta name="geo.position" content="46.2276;2.2137">
+    <meta name="ICBM" content="46.2276, 2.2137">
+  {%- when 'it' -%}
+    <meta name="geo.region" content="IT">
+    <meta name="geo.position" content="41.8719;12.5674">
+    <meta name="ICBM" content="41.8719, 12.5674">
+{%- endcase -%}
+
+{%- comment -%}Language selection schema{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "{{ shop.url }}",
+  "potentialAction": {
+    "@type": "ReadAction",
+    "target": [
+      {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ shop.url }}",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ shop.url | replace: shop.domain, 'es-latam.' | append: shop.domain }}",
+        "inLanguage": "es-419"
+      },
+      {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ shop.url | replace: shop.domain, 'es.' | append: shop.domain }}",
+        "inLanguage": "es-ES"
+      },
+      {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ shop.url | replace: shop.domain, 'pt-br.' | append: shop.domain }}",
+        "inLanguage": "pt-BR"
+      },
+      {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ shop.url | replace: shop.domain, 'uk.' | append: shop.domain }}",
+        "inLanguage": "en-GB"
+      },
+      {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ shop.url | replace: shop.domain, 'de.' | append: shop.domain }}",
+        "inLanguage": "de"
+      },
+      {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ shop.url | replace: shop.domain, 'fr.' | append: shop.domain }}",
+        "inLanguage": "fr"
+      },
+      {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ shop.url | replace: shop.domain, 'it.' | append: shop.domain }}",
+        "inLanguage": "it"
+      }
+    ]
+  }
+}
+</script> 

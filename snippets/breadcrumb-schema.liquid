@@ -1,0 +1,61 @@
+{%- comment -%}
+  Breadcrumb Schema Markup
+  - Improves site structure understanding for search engines
+  - Enhances navigation in search results
+  - Supports better crawling and indexing
+{%- endcomment -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ shop.url }}"
+    }
+    {%- if template contains 'collection' and collection.handle -%}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ collection.title | escape }}",
+      "item": "{{ shop.url }}/collections/{{ collection.handle }}"
+    }
+    {%- endif -%}
+    {%- if template contains 'product' -%}
+    ,{
+      "@type": "ListItem",
+      "position": {% if collection %}3{% else %}2{% endif %},
+      "name": "{{ product.title | escape }}",
+      "item": "{{ shop.url }}{{ product.url }}"
+    }
+    {%- endif -%}
+    {%- if template contains 'page' -%}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.title | escape }}",
+      "item": "{{ shop.url }}/pages/{{ page.handle }}"
+    }
+    {%- endif -%}
+    {%- if template contains 'blog' -%}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ blog.title | escape }}",
+      "item": "{{ shop.url }}/blogs/{{ blog.handle }}"
+    }
+    {%- endif -%}
+    {%- if template contains 'article' -%}
+    ,{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ article.title | escape }}",
+      "item": "{{ shop.url }}{{ article.url }}"
+    }
+    {%- endif -%}
+  ]
+}
+</script> 

@@ -1,0 +1,227 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "custom_css": [],
+      "settings": {
+        "autoplay": false,
+        "autoplay_speed": 7,
+        "show_navigation": true,
+        "image_height": "adapt",
+        "content_width": "medium",
+        "image_height_mobile": "500px",
+        "color_text": "#ffffff",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#000000",
+        "overlay_opacity": 7,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "slideshow_Phcjdx": {
+      "type": "slideshow",
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "image_height": "650px",
+        "content_width": "small",
+        "image_height_mobile": "auto",
+        "color_text": "#ffffff",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 20,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "custom_liquid_j6XzHy": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "liquid": "<style>\n  :root {\n    --ro-black: #000;\n    --ro-white: #fff;\n    --ro-lime: #E9FD9F;\n    --ro-dark-gray: #444;\n    --ro-light-gray: rgba(68, 68, 68, 0.7);\n    --gap: 16px;\n    --radius: 12px;\n    --shadow: 0 4px 12px rgba(0,0,0,0.08);\n  }\n\n  .ri-hero-welcome {\n    background: linear-gradient(135deg, var(--ro-lime) 10%, var(--ro-white) 90%);\n    padding: calc(var(--gap)*3) var(--gap) var(--gap);\n    position: relative;\n    overflow: hidden;\n    border-radius: var(--radius);\n  }\n\n  .ri-hero-welcome::before {\n    content: '';\n    position: absolute;\n    top: -20%;\n    left: -20%;\n    width: 140%;\n    height: 140%;\n    background: radial-gradient(circle at center, rgba(215,248,72,0.3), transparent 70%);\n    transform: rotate(45deg);\n  }\n\n  .ri-hero-content {\n    position: relative;\n    max-width: 1200px;\n    margin: 0 auto;\n    display: grid;\n    gap: calc(var(--gap)*2);\n  }\n\n  .ri-hero-text {\n    text-align: center;\n  }\n\n  .ri-hero-welcome h1 {\n    font-size: 2.5rem;\n    font-weight: 700;\n    margin-bottom: .75rem;\n    color: var(--ro-black);\n  }\n\n  .ri-hero-welcome p {\n    font-size: 1.125rem;\n    color: var(--ro-dark-gray);\n    max-width: 600px;\n    margin: 0 auto var(--gap);\n    line-height: 1.5;\n  }\n\n  .ri-hero-features {\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    gap: var(--gap);\n    max-width: 500px;\n    margin: calc(var(--gap)*1.5) auto;\n  }\n\n  .ri-hero-feature {\n    display: flex;\n    align-items: center;\n    gap: calc(var(--gap)*0.75);\n    color: var(--ro-dark-gray);\n  }\n\n  .ri-hero-feature svg {\n    width: 24px;\n    height: 24px;\n    flex-shrink: 0;\n  }\n\n  .ri-hero-btn {\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    background: var(--ro-black);\n    color: var(--ro-lime);\n    padding: .75rem 2rem;\n    border-radius: var(--radius);\n    font-weight: 600;\n    text-decoration: none;\n    transition: all 0.2s;\n    box-shadow: var(--shadow);\n  }\n\n  .ri-hero-btn:hover {\n    background: rgba(0,0,0,0.85);\n    transform: translateY(-2px);\n  }\n\n  .ri-hero-trust {\n    margin-top: calc(var(--gap)*2);\n    text-align: center;\n  }\n\n  .ri-hero-rating {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: calc(var(--gap)*0.5);\n    margin-top: var(--gap);\n  }\n\n  .ri-hero-stars {\n    color: #FFB800;\n  }\n\n  .ri-hero-rating-text {\n    color: var(--ro-dark-gray);\n    font-size: 0.875rem;\n  }\n\n  .ri-hero-badges {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: calc(var(--gap)*2);\n    margin-top: var(--gap);\n  }\n\n  .ri-hero-badge {\n    opacity: 0.7;\n    height: 32px;\n    width: auto;\n  }\n\n  @media (min-width: 768px) {\n    .ri-hero-welcome {\n      padding: calc(var(--gap)*4) var(--gap);\n    }\n    \n    .ri-hero-content {\n      grid-template-columns: 1.2fr 1fr;\n      align-items: center;\n      text-align: left;\n    }\n    \n    .ri-hero-text {\n      text-align: left;\n    }\n    \n    .ri-hero-welcome h1 {\n      font-size: 3rem;\n    }\n    \n    .ri-hero-welcome p {\n      font-size: 1.25rem;\n      margin-left: 0;\n    }\n    \n    .ri-hero-features {\n      margin-left: 0;\n    }\n  }\n</style>\n\n<section class=\"ri-hero-welcome\">\n  <div class=\"ri-hero-content\">\n    <div class=\"ri-hero-text\">\n      <h1>Welcome to Roamio</h1>\n      <p>Your ultimate travel companion—instant eSIM activation, global coverage across 150+ countries, real-time tracking, and transparent pricing with zero hidden fees.</p>\n      \n      <div class=\"ri-hero-features\">\n        <div class=\"ri-hero-feature\">\n          <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n            <path d=\"M20 6L9 17l-5-5\"/>\n          </svg>\n          <span>Instant Activation</span>\n        </div>\n        <div class=\"ri-hero-feature\">\n          <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n            <circle cx=\"12\" cy=\"12\" r=\"10\"/>\n            <path d=\"M2 12h20\"/>\n            <path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"/>\n          </svg>\n          <span>Global Coverage</span>\n        </div>\n        <div class=\"ri-hero-feature\">\n          <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n            <path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/>\n          </svg>\n          <span>Secure Connection</span>\n        </div>\n        <div class=\"ri-hero-feature\">\n          <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n            <path d=\"M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9\"/>\n          </svg>\n          <span>24/7 Support</span>\n        </div>\n      </div>\n\n      <a href=\"#ro-plans\" class=\"ri-hero-btn\">\n        Browse Plans\n        <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n          <path d=\"M5 12h14M12 5l7 7-7 7\"/>\n        </svg>\n      </a>\n\n      <div class=\"ri-hero-trust\">\n        <div class=\"ri-hero-rating\">\n          <div class=\"ri-hero-stars\">★★★★★</div>\n          <span class=\"ri-hero-rating-text\">4.8/5 from 1,000+ reviews</span>\n        </div>\n        <div class=\"ri-hero-badges\">\n          <!-- Replace src with your actual badge images -->\n          <img src=\"trustpilot.png\" alt=\"Trustpilot\" class=\"ri-hero-badge\">\n          <img src=\"google-reviews.png\" alt=\"Google Reviews\" class=\"ri-hero-badge\">\n        </div>\n      </div>\n    </div>\n\n    <div class=\"ri-hero-image\">\n      <!-- Replace src with your actual hero image -->\n      <img src=\"hero-image.png\" alt=\"Roamio eSIM Global Coverage\" style=\"width: 100%; height: auto; border-radius: var(--radius);\">\n    </div>\n  </div>\n</section>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "custom_liquid_CkaMXW": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "liquid": "<style>\n  :root {\n    --ro-black:     #000;\n    --ro-white:     #fff;\n    --ro-lime:      #D7F848;\n    --ro-dark-gray: rgba(0, 0, 0, 0.6);\n    --gap:          16px;\n    --radius:       8px;\n  }\n  .ri-hero {\n    position: relative;\n    padding: calc(var(--gap)*2) var(--gap);\n    text-align: center;\n    color: var(--ro-black);\n    background: linear-gradient(135deg, #F7F7F7 0%, #E8E8E8 100%);\n    overflow: hidden;\n    border-radius: var(--radius);\n  }\n  .ri-hero::before {\n    content: '';\n    position: absolute;\n    top: -30%; left: -30%;\n    width: 160%; height: 160%;\n    background: radial-gradient(circle at center, var(--ro-lime) 0%, transparent 70%);\n    opacity: .1;\n  }\n  .ri-hero * { position: relative; }\n  .ri-hero h1 {\n    margin: 0 0 .5rem;\n    font-size: 2rem;\n    font-weight: 700;\n    color: var(--ro-black);\n  }\n  .ri-hero p {\n    margin: 0 0 var(--gap);\n    font-size: 1rem;\n    line-height: 1.4;\n    color: var(--ro-dark-gray);\n  }\n  .ri-features {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    gap: var(--gap);\n  }\n  .ri-feature {\n    display: flex;\n    align-items: center;\n    gap: .5rem;\n    max-width: 180px;\n    text-align: left;\n  }\n  .ri-feature svg {\n    width: 20px; height: 20px;\n    flex-shrink: 0;\n    color: var(--ro-lime);\n  }\n  .ri-feature span {\n    font-size: .875rem;\n    font-weight: 600;\n    color: var(--ro-black);\n  }\n</style>\n\n<section class=\"ri-hero\">\n  <h1>Roamio eSIM Data Plans</h1>\n  <p>Instant, affordable connectivity in 150+ countries—no physical SIM needed. Activate right after purchase and roam stress-free.</p>\n  <div class=\"ri-features\">\n    <div class=\"ri-feature\">\n      <!-- Instant Activation -->\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13 2L3 14h9l-1 8 10-12h-9l1-8z\"/></svg>\n      <span>Instant Activation</span>\n    </div>\n    <div class=\"ri-feature\">\n      <!-- 150+ Countries -->\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M2 12h20\"/></svg>\n      <span>150+ Countries</span>\n    </div>\n    <div class=\"ri-feature\">\n      <!-- Secure Payment -->\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 10V4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6\"/><rect x=\"1\" y=\"10\" width=\"22\" height=\"12\" rx=\"2\"/><line x1=\"1\" y1=\"16\" x2=\"23\" y2=\"16\"/></svg>\n      <span>Secure Payment</span>\n    </div>\n    <div class=\"ri-feature\">\n      <!-- 24/7 Support -->\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 12a10 10 0 1 1-5.2-8.9\"/><path d=\"M22 4v6h-6\"/></svg>\n      <span>24/7 Support</span>\n    </div>\n    <div class=\"ri-feature\">\n      <!-- Affordable Rates -->\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 1v22\"/><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M8 12h8\"/></svg>\n      <span>Affordable Rates</span>\n    </div>\n    <div class=\"ri-feature\">\n      <!-- Data Tracking -->\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"M12 5l7 7-7 7\"/></svg>\n      <span>Data Usage Tracking</span>\n\n</section>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "custom_liquid_9kXw9a": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".ri-plan-card {flex: 0 0 200px; background: var(--ro-white); border-radius: var(--ro-radius); padding: var(--gap); box-shadow: var(--ro-shadow); border: 1px solid var(--ro-black); /* CAMBIO */ text-align: center; scroll-snap-align: start; transition: transform 0.2s, box-shadow 0.2s;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Roamio Plans</title>\n  <style>\n    :root {\n      --ro-black:       #000000;\n      --ro-lime:        #D7F848;\n      --ro-white:       #ffffff;\n      --ro-gray:        rgba(0, 0, 0, 0.12);\n      --ro-dark-gray:   #666666;\n      --ro-radius:      12px;\n      --ro-shadow:      0 2px 8px rgba(0, 0, 0, 0.05);\n      --gap:            16px;\n    }\n\n    *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n    }\n\n    body {\n      font-family: 'Inter', sans-serif;\n      background: #fafafa;\n      color: var(--ro-black);\n    }\n\n    .ri-section {\n      max-width: 1200px;\n      margin: var(--gap) auto;\n      padding: 0 var(--gap);\n    }\n\n    .ri-section h2 {\n      font-size: 1rem;\n      font-weight: 600;\n      margin-bottom: 0.5rem;\n      position: relative;\n      padding-bottom: 0.25rem;\n    }\n\n    .ri-section h2::after {\n      content: '';\n      position: absolute;\n      bottom: 0;\n      left: 0;\n      width: 3rem;\n      height: 2px;\n      background: var(--ro-lime);\n    }\n\n    .ri-note {\n      font-size: 0.75rem;\n      color: var(--ro-dark-gray);\n      margin-bottom: var(--gap);\n    }\n\n    .ri-carousel {\n      display: flex;\n      gap: var(--gap);\n      overflow-x: auto;\n      padding-bottom: var(--gap);\n      scroll-snap-type: x mandatory;\n    }\n    .ri-carousel::-webkit-scrollbar {\n      display: none;\n    }\n\n    .ri-plan-card {\n      flex: 0 0 200px;\n      background: var(--ro-white);\n      border-radius: var(--ro-radius);\n      padding: var(--gap);\n      box-shadow: var(--ro-shadow);\n      border: 1px solid var(--ro-gray);\n      text-align: center;\n      scroll-snap-align: start;\n      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;\n    }\n    .ri-plan-card:hover {\n      transform: translateY(-4px);\n      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\n      border-color: var(--ro-lime);\n    }\n\n    .ri-plan-card img {\n      width: 2rem;\n      height: 2rem;\n      border-radius: 50%;\n      object-fit: cover;\n      margin-bottom: 0.5rem;\n    }\n\n    .ri-plan-card h4 {\n      font-size: 1rem;\n      font-weight: 600;\n      margin: 0.25rem 0 0.5rem;\n    }\n\n    .ri-plan-card__details {\n      font-size: 0.75rem;\n      color: var(--ro-dark-gray);\n      margin-bottom: 0.5rem;\n    }\n\n    .ri-plan-card__price {\n      font-size: 0.95rem;\n      font-weight: 700;\n      margin-bottom: 0.25rem;\n      display: block;\n    }\n\n    .ri-plan-card__price--old {\n      font-size: 0.75rem;\n      color: #999999;\n      text-decoration: line-through;\n      display: block;\n      margin-bottom: 0.5rem;\n    }\n\n    .ri-plan-card__btn {\n      display: inline-block;\n      padding: 0.5rem 1rem;\n      background: var(--ro-lime);\n      color: var(--ro-black);\n      border-radius: var(--ro-radius);\n      font-size: 0.75rem;\n      font-weight: 600;\n      text-decoration: none;\n      cursor: pointer;\n      transition: background 0.2s, transform 0.1s;\n    }\n    .ri-plan-card__btn:hover {\n      background: #B8D83B;\n      transform: scale(1.05);\n    }\n  </style>\n</head>\n<body>\n\n  <!-- 1) Most Popular -->\n  <section class=\"ri-section\">\n    <h2>Most Popular</h2>\n    <p class=\"ri-note\">Loved by travelers worldwide for ease &amp; reliability.</p>\n    <div class=\"ri-carousel\">\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/es.png\" alt=\"Spain\">\n        <h4>Spain</h4>\n        <div class=\"ri-plan-card__details\">5 GB &bull; 7 days</div>\n        <span class=\"ri-plan-card__price\">$5.90</span>\n        <span class=\"ri-plan-card__price--old\">$8.90</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"44776790411368\">Get eSIM</a>\n      </div>\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/us.png\" alt=\"USA\">\n        <h4>USA</h4>\n        <div class=\"ri-plan-card__details\">10 GB &bull; 30 days</div>\n        <span class=\"ri-plan-card__price\">$19.99</span>\n        <span class=\"ri-plan-card__price--old\">$29.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"44776791279016\">Get eSIM</a>\n      </div>\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/gb.png\" alt=\"UK\">\n        <h4>UK</h4>\n        <div class=\"ri-plan-card__details\">8 GB &bull; 15 days</div>\n        <span class=\"ri-plan-card__price\">$14.99</span>\n        <span class=\"ri-plan-card__price--old\">$19.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"44776792046664\">Get eSIM</a>\n      </div>\n    </div>\n  </section>\n\n  <!-- 2) Regional Passes (Europe) -->\n  <section class=\"ri-section\">\n    <h2>Regional Passes (Europe)</h2>\n    <p class=\"ri-note\">One pass covers 42 European countries—trusted by 10K+ users.</p>\n    <div class=\"ri-carousel\">\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/eu.png\" alt=\"Europe+ 5 GB – 30 Days\">\n        <h4>Europe+ 5 GB – 30 Days</h4>\n        <div class=\"ri-plan-card__details\">5 GB &bull; 30 days</div>\n        <span class=\"ri-plan-card__price\">$9.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"51135054414088\">Get eSIM</a>\n      </div>\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/eu.png\" alt=\"Europe+ 10 GB – 10 Days\">\n        <h4>Europe+ 10 GB – 10 Days</h4>\n        <div class=\"ri-plan-card__details\">10 GB &bull; 10 days</div>\n        <span class=\"ri-plan-card__price\">$12.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"51119976251656\">Get eSIM</a>\n      </div>\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/eu.png\" alt=\"Europe+ 10 GB – 30 Days\">\n        <h4>Europe+ 10 GB – 30 Days</h4>\n        <div class=\"ri-plan-card__details\">10 GB &bull; 30 days</div>\n        <span class=\"ri-plan-card__price\">$16.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"51119976284424\">Get eSIM</a>\n      </div>\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/eu.png\" alt=\"Europe+ 20 GB – 30 Days\">\n        <h4>Europe+ 20 GB – 30 Days</h4>\n        <div class=\"ri-plan-card__details\">20 GB &bull; 30 days</div>\n        <span class=\"ri-plan-card__price\">$25.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"51123523059976\">Get eSIM</a>\n      </div>\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/eu.png\" alt=\"Europe+ Unlimited – 30 Days\">\n        <h4>Europe+ Unlimited – 30 Days</h4>\n        <div class=\"ri-plan-card__details\">Unlimited &bull; 30 days</div>\n        <span class=\"ri-plan-card__price\">$49.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"51135054446856\">Get eSIM</a>\n      </div>\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/eu.png\" alt=\"Test 0\">\n        <h4>Test 0</h4>\n        <div class=\"ri-plan-card__details\">—</div>\n        <span class=\"ri-plan-card__price\">$0.50</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"51454631051528\">Get eSIM</a>\n      </div>\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/eu.png\" alt=\"Europe+ 1 GB – 5 Days\">\n        <h4>Europe+ 1 GB – 5 Days</h4>\n        <div class=\"ri-plan-card__details\">1 GB &bull; 5 days</div>\n        <span class=\"ri-plan-card__price\">$1.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"51464254816520\">Get eSIM</a>\n      </div>\n    </div>\n  </section>\n\n  <!-- 3) Latin American Passes -->\n  <section class=\"ri-section\">\n    <h2>Latin American Passes</h2>\n    <p class=\"ri-note\">Seamless coverage in 18 countries—from Mexico to Argentina.</p>\n    <div class=\"ri-carousel\">\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/mx.png\" alt=\"Mexico\">\n        <h4>Mexico</h4>\n        <div class=\"ri-plan-card__details\">5 GB &bull; 7 days</div>\n        <span class=\"ri-plan-card__price\">$9.99</span>\n        <span class=\"ri-plan-card__price--old\">$12.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"44776795884904\">Get eSIM</a>\n      </div>\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/br.png\" alt=\"Brazil\">\n        <h4>Brazil</h4>\n        <div class=\"ri-plan-card__details\">8 GB &bull; 15 days</div>\n        <span class=\"ri-plan-card__price\">$14.99</span>\n        <span class=\"ri-plan-card__price--old\">$19.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"44776796652552\">Get eSIM</a>\n      </div>\n      <div class=\"ri-plan-card\">\n        <img src=\"https://flagcdn.com/w40/ar.png\" alt=\"Argentina\">\n        <h4>Argentina</h4>\n        <div class=\"ri-plan-card__details\">10 GB &bull; 30 days</div>\n        <span class=\"ri-plan-card__price\">$19.99</span>\n        <span class=\"ri-plan-card__price--old\">$29.99</span>\n        <a href=\"#\" class=\"ri-plan-card__btn\" data-variant-id=\"44776797420200\">Get eSIM</a>\n      </div>\n    </div>\n  </section>\n\n  <script>\n    document.querySelectorAll('.ri-plan-card__btn').forEach(btn => {\n      btn.addEventListener('click', e => {\n        e.preventDefault();\n        const variantId = btn.getAttribute('data-variant-id');\n        if (!variantId) {\n          return alert(\"Missing data-variant-id.\");\n        }\n\n        // Redirect directly to checkout with this variant:\n        // Format: /cart/{VARIANT_ID}:1?checkout\n        window.location.href = `/cart/${variantId}:1?checkout`;\n      });\n    });\n  </script>\n\n</body>\n</html>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 20,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "custom_liquid_E8UjRV": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "liquid": "<style>\n  :root {\n    --ro-black:     #000;\n    --ro-lime:      #D7F848;\n    --ro-white:     #fff;\n    --ro-gray:      #f0f0f0;\n    --ro-dark-gray: #666;\n    --ro-radius:    12px;\n    --ro-shadow:    0 2px 8px rgba(0,0,0,0.05);\n    --gap:          16px;\n  }\n  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }\n  body { font-family: 'Inter', sans-serif; background: #fafafa; color: var(--ro-black); }\n\n  .ri-benefits-section {\n    max-width: 1200px;\n    margin: var(--gap) auto;\n    padding: var(--gap);\n    background: var(--ro-white);\n    border-radius: var(--ro-radius);\n    box-shadow: var(--ro-shadow);\n  }\n  .ri-benefits-section h2 {\n    font-size: 1.25rem; /* increased */\n    font-weight: 600;\n    margin-bottom: .75rem;\n    position: relative; padding-bottom: .25rem;\n  }\n  .ri-benefits-section h2::after {\n    content: ''; position: absolute; bottom: 0; left: 0;\n    width: 4rem; height: 3px; background: var(--ro-lime);\n  }\n  .ri-benefits-carousel {\n    display: flex;\n    gap: var(--gap);\n    overflow-x: auto;\n    padding: var(--gap) 0;\n    scroll-snap-type: x mandatory;\n  }\n  .ri-benefits-carousel::-webkit-scrollbar { display: none; }\n  .ri-benefit-card {\n    flex: 0 0 220px; /* wider */\n    background: var(--ro-white);\n    border-radius: var(--ro-radius);\n    padding: calc(var(--gap)*1.2);\n    box-shadow: var(--ro-shadow);\n    border: 1px solid var(--ro-gray);\n    text-align: center;\n    scroll-snap-align: start;\n    transition: transform .2s, box-shadow .2s;\n  }\n  .ri-benefit-card:hover {\n    transform: translateY(-4px);\n    box-shadow: 0 4px 12px rgba(0,0,0,0.15);\n  }\n  .ri-benefit-card svg {\n    width: 2.5rem; height: 2.5rem; /* larger */\n    color: var(--ro-lime);\n    margin-bottom: .75rem;\n  }\n  .ri-benefit-card h3 {\n    font-size: 1rem; /* larger */\n    font-weight: 600;\n    margin: .5rem 0 .75rem;\n  }\n  .ri-benefit-card p {\n    font-size: .85rem; /* larger */\n    color: var(--ro-dark-gray);\n    line-height: 1.4;\n  }\n</style>\n\n<section class=\"ri-benefits-section\">\n  <h2>Why Choose Roamio?</h2>\n  <div class=\"ri-benefits-carousel\">\n    <div class=\"ri-benefit-card\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M6 12h12\"/></svg>\n      <h3>Unlimited Data</h3>\n      <p>Stream, browse and share with zero caps in 200+ countries.</p>\n    </div>\n    <div class=\"ri-benefit-card\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"/><line x1=\"12\" y1=\"2\" x2=\"12\" y2=\"22\"/></svg>\n      <h3>No Roaming Fees</h3>\n      <p>Use data abroad without surprise bills or hidden surcharges.</p>\n    </div>\n    <div class=\"ri-benefit-card\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"6\" y=\"4\" width=\"12\" height=\"16\" rx=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"1\"/></svg>\n      <h3>Keep Your SIM</h3>\n      <p>Install eSIM without ejecting your physical SIM—stay reachable.</p>\n    </div>\n    <div class=\"ri-benefit-card\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2l3 6h6l-5 4 2 6-5-3-5 3 2-6-5-4h6z\"/></svg>\n      <h3>Instant Activation</h3>\n      <p>Get online in one click—no waiting, no fuss.</p>\n    </div>\n    <div class=\"ri-benefit-card\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"8\" cy=\"14\" r=\"2\"/><circle cx=\"16\" cy=\"14\" r=\"2\"/><path d=\"M8 14l2-6h4l2 6\"/></svg>\n      <h3>24/7 Support</h3>\n      <p>Our team is always here to help—any time, anywhere.</p>\n    </div>\n    <div class=\"ri-benefit-card\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 6h16v12H4z\"/><path d=\"M4 10h16\"/></svg>\n      <h3>Affordable Rates</h3>\n      <p>Plans from €1.99/day—transparent pricing, no markups.</p>\n    </div>\n    <div class=\"ri-benefit-card\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 1a3 3 0 0 0-3 3v4H7l5 5 5-5h-2V4a3 3 0 0 0-3-3z\"/></svg>\n      <h3>Secure & Private</h3>\n      <p>Encrypted connections keep your data safe on any network.</p>\n    </div>\n    <div class=\"ri-benefit-card\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 6h18v4H3zM3 14h12v4H3z\"/></svg>\n      <h3>Flexible Plans</h3>\n      <p>Choose daily, weekly or monthly bundles to fit your trip.</p>\n    </div>\n    <div class=\"ri-benefit-card\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"M12 5l7 7-7 7\"/></svg>\n      <h3>Data Tracking</h3>\n      <p>Monitor your usage in real-time right from the app.</p>\n    </div>\n    <div class=\"ri-benefit-card\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n           stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2\"/><path d=\"M3 10h18\"/></svg>\n      <h3>Multi-eSIM Management</h3>\n      <p>Store and switch between multiple plans seamlessly.</p>\n    </div>\n  </div>\n</section>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "linear-gradient(54deg, rgba(215, 248, 72, 1), rgba(255, 255, 255, 0.9294) 3%)",
+        "color_button_text": "#ffffffed",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 20,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "custom_liquid_T37cKw": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "liquid": "<section class=\"activation-steps\">\n  <div class=\"container\">\n    <h2>How to Activate Your eSIM in 3 Easy Steps</h2>\n    <p class=\"intro\">Instant connectivity in under 2 minutes—no physical SIM needed.</p>\n\n    <div class=\"steps-container\">\n      <!-- Step 1 -->\n      <div class=\"step\">\n        <div class=\"step-header\">\n          <span class=\"step-number\">1</span>\n          <div class=\"step-icon\" aria-hidden=\"true\">\n            <!-- Shopping cart icon -->\n            <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n                 stroke-linecap=\"round\" stroke-linejoin=\"round\">\n              <path d=\"M6 6h15l-1.5 9h-13z\"/><circle cx=\"9\" cy=\"21\" r=\"1\"/><circle cx=\"19\" cy=\"21\" r=\"1\"/>\n            </svg>\n          </div>\n        </div>\n        <h3>Choose &amp; Purchase</h3>\n        <p>Select your perfect plan and checkout securely.</p>\n        <p class=\"estimate\"><strong>Time:</strong> ~30 seconds</p>\n      </div>\n\n      <!-- Step 2 -->\n      <div class=\"step\">\n        <div class=\"step-header\">\n          <span class=\"step-number\">2</span>\n          <div class=\"step-icon\" aria-hidden=\"true\">\n            <!-- Email / QR icon -->\n            <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n                 stroke-linecap=\"round\" stroke-linejoin=\"round\">\n              <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M3 9h18\"/><path d=\"M9 22V12h6v10\"/>\n            </svg>\n          </div>\n        </div>\n        <h3>Get Your QR Code</h3>\n        <p>We’ll email you a secure activation link and QR—check spam if needed.</p>\n        <p class=\"estimate\"><strong>Time:</strong> ~20 seconds</p>\n      </div>\n\n      <!-- Step 3 -->\n      <div class=\"step\">\n        <div class=\"step-header\">\n          <span class=\"step-number\">3</span>\n          <div class=\"step-icon\" aria-hidden=\"true\">\n            <!-- Smartphone icon -->\n            <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"\n                 stroke-linecap=\"round\" stroke-linejoin=\"round\">\n              <rect x=\"7\" y=\"2\" width=\"10\" height=\"20\" rx=\"2\"/><circle cx=\"12\" cy=\"18\" r=\"1\"/>\n            </svg>\n          </div>\n        </div>\n        <h3>Activate on Device</h3>\n        <p>\n          <strong>iOS:</strong> Settings → Cellular → Add Cellular Plan → Scan QR.<br>\n          <strong>Android:</strong> Settings → Network &amp; Internet → Mobile network → Add carrier.\n        </p>\n        <p class=\"estimate\"><strong>Time:</strong> ~1 minute</p>\n      </div>\n    </div>\n\n    <div class=\"support\">\n      <p>Need help? <a href=\"/help/activation\" target=\"_blank\">View detailed guide</a> or <a href=\"tel:+18001234567\">call 24/7 support</a>.</p>\n    </div>\n  </div>\n</section>\n\n<style>\n  :root {\n    --ro-black:      #000;\n    --ro-lime:       #D7F848;\n    --ro-white:      #fff;\n    --ro-gray-bg:    #fafafa;\n    --ro-gray-light: #f0f0f0;\n    --ro-gray-dark:  #666;\n    --gap:           1rem;\n    --radius:        0.75rem;\n    --shadow:        0 2px 8px rgba(0,0,0,0.05);\n    --transition:    all .2s ease;\n  }\n\n  body {\n    background: var(--ro-gray-bg);\n    font-family: 'Inter', sans-serif;\n    color: var(--ro-black);\n  }\n\n  .activation-steps {\n    padding: calc(var(--gap)*2) var(--gap);\n  }\n  .activation-steps .container {\n    max-width: 800px;\n    margin: 0 auto;\n    text-align: center;\n  }\n  .activation-steps h2 {\n    font-size: 2rem;\n    margin-bottom: .5rem;\n  }\n  .activation-steps .intro {\n    font-size: 1.125rem;\n    color: var(--ro-gray-dark);\n    margin-bottom: calc(var(--gap)*1.5);\n  }\n\n  .steps-container {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));\n    gap: var(--gap);\n  }\n\n  .step {\n    background: var(--ro-white);\n    border-radius: var(--radius);\n    border: 1px solid var(--ro-gray-light);\n    box-shadow: var(--shadow);\n    padding: var(--gap);\n    text-align: left;\n    transition: var(--transition);\n  }\n  .step:hover,\n  .step:focus-within {\n    transform: translateY(-4px);\n    box-shadow: 0 4px 12px rgba(0,0,0,0.15);\n  }\n\n  .step-header {\n    display: flex;\n    align-items: center;\n    gap: .75rem;\n    margin-bottom: .75rem;\n  }\n  .step-number {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    width: 2rem;\n    height: 2rem;\n    background: var(--ro-lime);\n    color: var(--ro-black);\n    font-weight: 700;\n    border-radius: 50%;\n    font-size: 1rem;\n  }\n  .step-icon {\n    width: 2rem; height: 2rem;\n  }\n  .step-icon svg {\n    width: 100%; height: 100%;\n    stroke: var(--ro-lime);\n  }\n\n  .step h3 {\n    font-size: 1.25rem;\n    margin: 0 0 .5rem;\n  }\n  .step p {\n    font-size: .95rem;\n    color: var(--ro-gray-dark);\n    line-height: 1.4;\n    margin-bottom: .5rem;\n  }\n  .step .estimate {\n    font-size: .85rem;\n    color: var(--ro-gray-dark);\n  }\n\n  .support {\n    margin-top: calc(var(--gap)*2);\n    font-size: .9rem;\n  }\n  .support a {\n    color: var(--ro-lime);\n    font-weight: 600;\n    text-decoration: none;\n    transition: opacity .2s;\n  }\n  .support a:hover {\n    opacity: .7;\n  }\n\n  @media (max-width: 640px) {\n    .activation-steps h2 {\n      font-size: 1.75rem;\n    }\n    .step h3 {\n      font-size: 1.125rem;\n    }\n  }\n</style>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "featured_collection_q8tDnG": {
+      "type": "featured-collection",
+      "custom_css": [],
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "frontpage",
+        "products": [
+          "esim-europa-1gb-valida-por-7-dias"
+        ],
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Featured collection",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "custom_liquid_8JUjPT": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "liquid": "<style>\n  :root {\n    --ro-black: #000;\n    --ro-white: #fff;\n    --ro-lime: #E9FD9F;\n    --ro-dark-gray: #444;\n    --ro-light-gray: rgba(68, 68, 68, 0.7);\n    --gap: 16px;\n    --radius: 12px;\n    --shadow: 0 4px 12px rgba(0,0,0,0.08);\n  }\n\n  .ri-hero-welcome {\n    background: linear-gradient(135deg, var(--ro-lime) 10%, var(--ro-white) 90%);\n    padding: calc(var(--gap)*3) var(--gap) var(--gap);\n    position: relative;\n    overflow: hidden;\n    border-radius: var(--radius);\n  }\n\n  .ri-hero-welcome::before {\n    content: '';\n    position: absolute;\n    top: -20%;\n    left: -20%;\n    width: 140%;\n    height: 140%;\n    background: radial-gradient(circle at center, rgba(215,248,72,0.3), transparent 70%);\n    transform: rotate(45deg);\n  }\n\n  .ri-hero-content {\n    position: relative;\n    max-width: 1200px;\n    margin: 0 auto;\n    display: grid;\n    gap: calc(var(--gap)*2);\n  }\n\n  .ri-hero-text {\n    text-align: center;\n  }\n\n  .ri-hero-welcome h1 {\n    font-size: 2.5rem;\n    font-weight: 700;\n    margin-bottom: .75rem;\n    color: var(--ro-black);\n  }\n\n  .ri-hero-welcome p {\n    font-size: 1.125rem;\n    color: var(--ro-dark-gray);\n    max-width: 600px;\n    margin: 0 auto var(--gap);\n    line-height: 1.5;\n  }\n\n  .ri-hero-features {\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    gap: var(--gap);\n    max-width: 500px;\n    margin: calc(var(--gap)*1.5) auto;\n  }\n\n  .ri-hero-feature {\n    display: flex;\n    align-items: center;\n    gap: calc(var(--gap)*0.75);\n    color: var(--ro-dark-gray);\n  }\n\n  .ri-hero-feature svg {\n    width: 24px;\n    height: 24px;\n    flex-shrink: 0;\n  }\n\n  .ri-hero-btn {\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    background: var(--ro-black);\n    color: var(--ro-lime);\n    padding: .75rem 2rem;\n    border-radius: var(--radius);\n    font-weight: 600;\n    text-decoration: none;\n    transition: all 0.2s;\n    box-shadow: var(--shadow);\n  }\n\n  .ri-hero-btn:hover {\n    background: rgba(0,0,0,0.85);\n    transform: translateY(-2px);\n  }\n\n  .ri-hero-trust {\n    margin-top: calc(var(--gap)*2);\n    text-align: center;\n  }\n\n  .ri-hero-rating {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: calc(var(--gap)*0.5);\n    margin-top: var(--gap);\n  }\n\n  .ri-hero-stars {\n    color: #FFB800;\n  }\n\n  .ri-hero-rating-text {\n    color: var(--ro-dark-gray);\n    font-size: 0.875rem;\n  }\n\n  .ri-hero-badges {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: calc(var(--gap)*2);\n    margin-top: var(--gap);\n  }\n\n  .ri-hero-badge {\n    opacity: 0.7;\n    height: 32px;\n    width: auto;\n  }\n\n  @media (min-width: 768px) {\n    .ri-hero-welcome {\n      padding: calc(var(--gap)*4) var(--gap);\n    }\n    \n    .ri-hero-content {\n      grid-template-columns: 1.2fr 1fr;\n      align-items: center;\n      text-align: left;\n    }\n    \n    .ri-hero-text {\n      text-align: left;\n    }\n    \n    .ri-hero-welcome h1 {\n      font-size: 3rem;\n    }\n    \n    .ri-hero-welcome p {\n      font-size: 1.25rem;\n      margin-left: 0;\n    }\n    \n    .ri-hero-features {\n      margin-left: 0;\n    }\n  }\n</style>\n\n<section class=\"ri-hero-welcome\">\n  <div class=\"ri-hero-content\">\n    <div class=\"ri-hero-text\">\n      <h1>Welcome to Roamio</h1>\n      <p>Your ultimate travel companion—instant eSIM activation, global coverage across 150+ countries, real-time tracking, and transparent pricing with zero hidden fees.</p>\n      \n      <div class=\"ri-hero-features\">\n        <div class=\"ri-hero-feature\">\n          <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n            <path d=\"M20 6L9 17l-5-5\"/>\n          </svg>\n          <span>Instant Activation</span>\n        </div>\n        <div class=\"ri-hero-feature\">\n          <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n            <circle cx=\"12\" cy=\"12\" r=\"10\"/>\n            <path d=\"M2 12h20\"/>\n            <path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"/>\n          </svg>\n          <span>Global Coverage</span>\n        </div>\n        <div class=\"ri-hero-feature\">\n          <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n            <path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/>\n          </svg>\n          <span>Secure Connection</span>\n        </div>\n        <div class=\"ri-hero-feature\">\n          <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n            <path d=\"M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9\"/>\n          </svg>\n          <span>24/7 Support</span>\n        </div>\n      </div>\n\n      <a href=\"#ro-plans\" class=\"ri-hero-btn\">\n        Browse Plans\n        <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n          <path d=\"M5 12h14M12 5l7 7-7 7\"/>\n        </svg>\n      </a>\n\n      <div class=\"ri-hero-trust\">\n        <div class=\"ri-hero-rating\">\n          <div class=\"ri-hero-stars\">★★★★★</div>\n          <span class=\"ri-hero-rating-text\">4.8/5 from 1,000+ reviews</span>\n        </div>\n        <div class=\"ri-hero-badges\">\n          <!-- Replace src with your actual badge images -->\n          <img src=\"trustpilot.png\" alt=\"Trustpilot\" class=\"ri-hero-badge\">\n          <img src=\"google-reviews.png\" alt=\"Google Reviews\" class=\"ri-hero-badge\">\n        </div>\n      </div>\n    </div>\n\n    <div class=\"ri-hero-image\">\n      <!-- Replace src with your actual hero image -->\n      <img src=\"hero-image.png\" alt=\"Roamio eSIM Global Coverage\" style=\"width: 100%; height: auto; border-radius: var(--radius);\">\n    </div>\n  </div>\n</section>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "slideshow_Phcjdx",
+    "custom_liquid_j6XzHy",
+    "custom_liquid_CkaMXW",
+    "custom_liquid_9kXw9a",
+    "custom_liquid_E8UjRV",
+    "custom_liquid_T37cKw",
+    "featured_collection_q8tDnG",
+    "custom_liquid_8JUjPT"
+  ]
+}

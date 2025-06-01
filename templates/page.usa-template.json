@@ -1,0 +1,51 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "text_size": "text-sm",
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "custom_liquid_PrPHcc": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "liquid": "{% if request.page_handle == 'north-america' %}\n<div class=\"esim-usa-section\">\n  <img src=\"https://flagcdn.com/w80/us.png\" alt=\"USA Flag\" class=\"flag\" />\n  <h2>eSIM Packages for USA</h2>\n  <p>Instant connectivity across the United States. Choose your plan and get activated in minutes — no physical SIM needed.</p>\n\n  <div class=\"esim-grid\">\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"usa-esim\" data-variant-id=\"51120017473800\">\n      <h3>1 GB</h3>\n      <p>7 days</p>\n      <strong>USD 4.49</strong>\n    </label>\n\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"usa-esim\" data-variant-id=\"51120020979976\">\n      <h3>3 GB</h3>\n      <p>30 days</p>\n      <strong>USD 11.99</strong>\n    </label>\n\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"usa-esim\" data-variant-id=\"51120021012744\">\n      <h3>5 GB</h3>\n      <p>30 days</p>\n      <strong>USD 18.99</strong>\n    </label>\n\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"usa-esim\" data-variant-id=\"51120099999901\">\n      <h3>10 GB</h3>\n      <p>30 days</p>\n      <strong>USD 35.99</strong>\n    </label>\n\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"usa-esim\" data-variant-id=\"51120099999902\">\n      <h3>Unlimited Data</h3>\n      <p>15 days</p>\n      <strong>USD 44.99</strong>\n    </label>\n  </div>\n\n  <button class=\"add-to-cart-btn\" onclick=\"addToCartUSA()\">🛒 Buy Now</button>\n</div>\n\n<script>\nfunction addToCartUSA() {\n  const selected = document.querySelector('input[name=\\\"usa-esim\\\"]:checked');\n  if (!selected) return alert('Please select a plan');\n  const variantId = selected.getAttribute('data-variant-id');\n\n  fetch('/cart/add.js', {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify({\n      id: variantId,\n      quantity: 1\n    })\n  })\n  .then(response => response.json())\n  .then(data => {\n    window.location.href = '/cart';\n  })\n  .catch(err => alert('Error adding to cart'));\n}\n</script>\n\n<style>\n.esim-usa-section {\n  font-family: Inter, sans-serif;\n  margin: 60px 0;\n  text-align: center;\n}\n\n.flag {\n  width: 48px;\n  height: auto;\n  margin-bottom: 10px;\n}\n\n.esim-usa-section h2 {\n  font-size: 2rem;\n  font-weight: 700;\n  margin-bottom: 10px;\n}\n\n.esim-usa-section p {\n  color: #555;\n  margin-bottom: 30px;\n}\n\n.esim-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));\n  gap: 16px;\n  justify-items: center;\n  margin-bottom: 30px;\n}\n\n.esim-card {\n  background: #fefefe;\n  border: 2px solid #ddd;\n  border-radius: 16px;\n  padding: 18px;\n  width: 100%;\n  max-width: 220px;\n  text-align: left;\n  transition: border 0.2s ease, box-shadow 0.2s ease;\n  cursor: pointer;\n  box-shadow: 0 1px 5px rgba(0,0,0,0.04);\n}\n\n.esim-card:hover {\n  border-color: #111;\n  box-shadow: 0 4px 12px rgba(0,0,0,0.08);\n}\n\n.esim-card input[type=\\\"radio\\\"] {\n  appearance: none;\n  border: 2px solid #000;\n  border-radius: 50%;\n  width: 18px;\n  height: 18px;\n  margin-bottom: 8px;\n  position: relative;\n}\n\n.esim-card input[type=\\\"radio\\\"]:checked::before {\n  content: \\\"\\\";\n  position: absolute;\n  top: 4px;\n  left: 4px;\n  width: 8px;\n  height: 8px;\n  background: #000;\n  border-radius: 50%;\n}\n\n.esim-card h3 {\n  margin: 8px 0 4px;\n  font-size: 1rem;\n  font-weight: 700;\n}\n\n.esim-card p {\n  color: #777;\n  margin-bottom: 6px;\n  font-size: 0.85rem;\n}\n\n.esim-card strong {\n  color: #000;\n  font-weight: 700;\n  font-size: 0.95rem;\n}\n\n.add-to-cart-btn {\n  background-color: #000;\n  color: #fff;\n  border: none;\n  padding: 12px 24px;\n  border-radius: 24px;\n  font-size: 0.95rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.3s ease;\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n}\n\n.add-to-cart-btn:hover {\n  background-color: #333;\n}\n</style>\n{% endif %}",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "custom_liquid_PrPHcc"
+  ]
+}

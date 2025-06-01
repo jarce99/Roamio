@@ -1,0 +1,196 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-collection-banner": {
+      "type": "main-collection-banner",
+      "blocks": {
+        "breadcrumb": {
+          "type": "breadcrumb",
+          "settings": {
+            "show_collections_link": true
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumb"
+      ],
+      "settings": {
+        "transparent_header": true,
+        "show_image": true,
+        "image_height": "750px",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_overlay": "#000000",
+        "overlay_opacity": 40,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": true,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "subcollections": {
+          "type": "subcollections",
+          "settings": {
+            "menu": "",
+            "per_row": 5,
+            "show_count": true
+          }
+        },
+        "promotion": {
+          "type": "promotion",
+          "settings": {
+            "position": 8,
+            "column_size": "1",
+            "heading": "Example heading",
+            "content": "<p>Share information about your brand with your customers.</p>",
+            "button_label": "Shop now",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "content_position": "md:items-center",
+            "text_alignment": "center",
+            "content_position_mobile": "items-center",
+            "text_alignment_mobile": "center",
+            "color_text": "#ffffff",
+            "color_button_text": "#4d5940",
+            "color_button_background": "#ffffff",
+            "color_button_gradient": "",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "subcollections",
+        "promotion"
+      ],
+      "custom_css": [],
+      "settings": {
+        "products_per_page": 21,
+        "columns": 5,
+        "columns_mobile": "2",
+        "pagination": "paginated",
+        "enable_filtering": true,
+        "filter_collapsed": false,
+        "filter_type": "drawer",
+        "filter_color_swatches": true,
+        "enable_sorting": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "divider": false,
+        "full_width": false,
+        "rounded": true
+      }
+    },
+    "custom_liquid_E64p9m": {
+      "type": "custom-liquid",
+      "settings": {
+        "liquid": "",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 8,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "custom_liquid_W97aDn": {
+      "type": "custom-liquid",
+      "settings": {
+        "liquid": "<!-- European Union Section -->\n<div class=\"esim-europe-section\">\n  <img src=\"https://flagcdn.com/w80/eu.png\" alt=\"EU Flag\" class=\"flag\" />\n  <h2>eSIM Packages for European Union</h2>\n  <p>Stay connected in 30+ European countries with fast, seamless data. Instant setup. No roaming fees or hidden fees.</p>\n\n  <div class=\"esim-grid\">\n    <!-- EU Unlimited Packages -->\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"europe-esim\" data-variant-id=\"511200888890\">\n      <h3>Unlimited</h3>\n      <p>5 days</p>\n      <strong>$7.99</strong>\n    </label>\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"europe-esim\" data-variant-id=\"511200888891\">\n      <h3>Unlimited</h3>\n      <p>10 days</p>\n      <strong>$12.99</strong>\n    </label>\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"europe-esim\" data-variant-id=\"511200888892\">\n      <h3>Unlimited</h3>\n      <p>15 days</p>\n      <strong>$16.99</strong>\n    </label>\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"europe-esim\" data-variant-id=\"511200888893\">\n      <h3>Unlimited</h3>\n      <p>30 days</p>\n      <strong>$24.99</strong>\n    </label>\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"europe-esim\" data-variant-id=\"511200888894\">\n      <h3>Unlimited</h3>\n      <p>60 days</p>\n      <strong>$39.99</strong>\n    </label>\n    <!-- EU Standard Packages -->\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"europe-esim\" data-variant-id=\"51119981822216\">\n      <h3>1 GB</h3>\n      <p>7 days</p>\n      <strong>$3.99</strong>\n    </label>\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"europe-esim\" data-variant-id=\"51123523059976\">\n      <h3>3 GB</h3>\n      <p>15 days</p>\n      <strong>$5.99</strong>\n    </label>\n  </div>\n\n  <button class=\"add-to-cart-btn\" onclick=\"addToCartEurope()\">🛒 Add to Cart</button>\n</div>\n\n<!-- USA Section -->\n<div class=\"esim-usa-section\">\n  <img src=\"https://flagcdn.com/w80/us.png\" alt=\"USA Flag\" class=\"flag\" />\n  <h2>eSIM Packages for USA</h2>\n  <p>Stay connected across the USA with fast and reliable data plans for every journey.</p>\n\n  <div class=\"esim-grid\">\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"usa-esim\" data-variant-id=\"51130000000001\">\n      <h3>1 GB</h3>\n      <p>7 days</p>\n      <strong>$4.49</strong>\n    </label>\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"usa-esim\" data-variant-id=\"51129729351944\">\n      <h3>3 GB</h3>\n      <p>15 days</p>\n      <strong>$1.99</strong>\n    </label>\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"usa-esim\" data-variant-id=\"51126531883272\">\n      <h3>5 GB</h3>\n      <p>30 days</p>\n      <strong>$3.99</strong>\n    </label>\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"usa-esim\" data-variant-id=\"51130000000004\">\n      <h3>10 GB</h3>\n      <p>30 days</p>\n      <strong>$24.99</strong>\n    </label>\n    <label class=\"esim-card\">\n      <input type=\"radio\" name=\"usa-esim\" data-variant-id=\"51130000000005\">\n      <h3>Unlimited</h3>\n      <p>30 days</p>\n      <strong>$44.99</strong>\n    </label>\n  </div>\n\n  <button class=\"add-to-cart-btn\" onclick=\"addToCartUSA()\">🛒 Add to Cart</button>\n</div>\n\n<script>\n  function addToCartEurope() {\n    const selected = document.querySelector('input[name=\"europe-esim\"]:checked');\n    if (!selected) return alert('Please select a European plan');\n    const variantId = selected.getAttribute('data-variant-id');\n\n    fetch('/cart/add.js', {\n      method: 'POST',\n      headers: { 'Content-Type': 'application/json' },\n      body: JSON.stringify({ id: variantId, quantity: 1 })\n    })\n      .then(res => res.json())\n      .then(data => window.location.href = '/cart')\n      .catch(() => alert('Error adding to cart'));\n  }\n\n  function addToCartUSA() {\n    const selected = document.querySelector('input[name=\"usa-esim\"]:checked');\n    if (!selected) return alert('Please select a USA plan');\n    const variantId = selected.getAttribute('data-variant-id');\n\n    fetch('/cart/add.js', {\n      method: 'POST',\n      headers: { 'Content-Type': 'application/json' },\n      body: JSON.stringify({ id: variantId, quantity: 1 })\n    })\n      .then(res => res.json())\n      .then(data => window.location.href = '/cart')\n      .catch(() => alert('Error adding to cart'));\n  }\n</script>\n\n<style>\n  .esim-europe-section,\n  .esim-usa-section {\n    font-family: 'Inter', sans-serif;\n    margin: 60px auto;\n    max-width: 1000px;\n    text-align: center;\n    padding: 0 20px;\n  }\n  .flag {\n    width: 48px;\n    margin-bottom: 10px;\n  }\n  h2 {\n    font-size: 2rem;\n    font-weight: 700;\n    margin: 10px 0;\n  }\n  p {\n    color: #555;\n    margin-bottom: 30px;\n    font-size: 1rem;\n  }\n  .esim-grid {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));\n    gap: 16px;\n    margin-bottom: 30px;\n  }\n  .esim-card {\n    background: #fff;\n    border: 2px solid #ddd;\n    border-radius: 16px;\n    padding: 20px;\n    text-align: left;\n    transition: border 0.2s ease, box-shadow 0.2s ease;\n    cursor: pointer;\n    position: relative;\n  }\n  .esim-card:hover {\n    border-color: #000;\n    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n  }\n  .esim-card input[type=\"radio\"] {\n    appearance: none;\n    border: 2px solid #000;\n    border-radius: 50%;\n    width: 18px;\n    height: 18px;\n    margin-bottom: 8px;\n    vertical-align: middle;\n    position: relative;\n  }\n  .esim-card input[type=\"radio\"]:checked::before {\n    content: \"\";\n    position: absolute;\n    top: 4px;\n    left: 4px;\n    width: 8px;\n    height: 8px;\n    background: #000;\n    border-radius: 50%;\n  }\n  .esim-card h3 {\n    font-size: 1.1rem;\n    font-weight: 700;\n    margin: 0 0 4px;\n    display: inline-block;\n  }\n  .esim-card p {\n    color: #777;\n    margin: 4px 0;\n    font-size: 0.9rem;\n    display: inline-block;\n  }\n  .esim-card strong {\n    font-weight: 700;\n    font-size: 1rem;\n    color: #000;\n    float: right;\n  }\n  .add-to-cart-btn {\n    background-color: #111;\n    color: #fff;\n    padding: 12px 28px;\n    border: none;\n    border-radius: 28px;\n    font-size: 1rem;\n    font-weight: 600;\n    cursor: pointer;\n    transition: background-color 0.2s ease;\n  }\n  .add-to-cart-btn:hover {\n    background-color: #333;\n  }\n</style>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 24,
+        "padding_bottom": 56,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Recently Viewed",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 80,
+        "divider": false,
+        "full_width": false,
+        "rounded": true
+      }
+    },
+    "custom_liquid_d4xFwj": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "liquid": "",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-collection-banner",
+    "main-collection",
+    "custom_liquid_E64p9m",
+    "custom_liquid_W97aDn",
+    "recently-viewed",
+    "custom_liquid_d4xFwj"
+  ]
+}

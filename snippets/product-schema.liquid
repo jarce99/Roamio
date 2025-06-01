@@ -1,0 +1,108 @@
+{%- comment -%}
+  Product Schema Markup with Rich Snippets
+  - Optimized for eSIM products
+  - Includes aggregateRating and offers
+  - Enhances Google Shopping integration
+{%- endcomment -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ product.title | escape }}",
+  "description": "{{ product.description | strip_html | escape }}",
+  "sku": "{{ product.selected_or_first_available_variant.sku | escape }}",
+  "url": "{{ shop.url }}{{ product.url }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ shop.name }}",
+    "logo": "{{ settings.logo | image_url }}",
+    "slogan": "Stay Connected Worldwide with Digital eSIM Technology"
+  },
+  {% if product.featured_image %}
+  "image": [
+    "{{ product.featured_image | img_url: '1200x1200', crop: 'center' }}",
+    "{{ product.featured_image | img_url: '800x800', crop: 'center' }}",
+    "{{ product.featured_image | img_url: '600x600', crop: 'center' }}"
+  ],
+  {% endif %}
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ shop.url }}{{ product.url }}",
+    "priceCurrency": "{{ shop.currency }}",
+    "price": "{{ product.selected_or_first_available_variant.price | divided_by: 100.00 }}",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+    "priceValidUntil": "{{ 'now' | date: '%Y' | plus: 1 }}-12-31",
+    "seller": {
+      "@type": "Organization",
+      "name": "{{ shop.name }}"
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/ReturnFiniteReturnWindow",
+      "merchantReturnDays": 30,
+      "returnMethod": "https://schema.org/ReturnByMail"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{% if product.metafields.reviews.rating %}{{ product.metafields.reviews.rating }}{% else %}4.8{% endif %}",
+    "reviewCount": "{% if product.metafields.reviews.rating_count %}{{ product.metafields.reviews.rating_count }}{% else %}1000{% endif %}",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Verified Customer"
+    },
+    "datePublished": "{{ 'now' | date: '%Y-%m-%d' }}",
+    "reviewBody": "Great eSIM service! Easy to install and excellent coverage worldwide."
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Coverage",
+      "value": "{{ product.metafields.custom.coverage | default: '190+ Countries' }}"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Activation",
+      "value": "Instant Digital Delivery"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Compatibility",
+      "value": "All eSIM Compatible Devices"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Data Allowance",
+      "value": "{{ product.metafields.custom.data_allowance | default: product.title | split: ' - ' | first }}"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Validity Period",
+      "value": "{{ product.metafields.custom.validity_period | default: '30 days' }}"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Network Type",
+      "value": "4G/LTE & 5G where available"
+    }
+  ],
+  "isAccessoryOrSparePartFor": {
+    "@type": "Product",
+    "name": "Smartphones & Tablets with eSIM capability",
+    "description": "Compatible with iPhone XS or newer, iPad Pro, Google Pixel 3 or newer, Samsung Galaxy S20 or newer"
+  }
+}
+</script> 

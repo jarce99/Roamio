@@ -1,0 +1,70 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-xl tracking-heading",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "custom_liquid_nMA6xD": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "liquid": "<section class=\"roamio-compatibility\">\n  <h2>📱 Is Your Phone eSIM-Ready?</h2>\n  <p>Most new smartphones support eSIM. Check your device below before purchasing.</p>\n\n  <div class=\"compatibility-grid\">\n    <div class=\"compatibility-card\">\n      <h3>✅ iPhone (Unlocked)</h3>\n      <ul>\n        <li>XR, XS, XS Max</li>\n        <li>11, 12, 13, 14, 15</li>\n        <li>16, 16 Plus, 16 Pro, 16 Pro Max</li>\n      </ul>\n    </div>\n\n    <div class=\"compatibility-card\">\n      <h3>✅ Samsung (Unlocked)</h3>\n      <ul>\n        <li>Galaxy S20–S24 & S24 Ultra</li>\n        <li>Note 20, Z Flip, Z Fold Series</li>\n      </ul>\n    </div>\n\n    <div class=\"compatibility-card\">\n      <h3>✅ Google Pixel</h3>\n      <ul>\n        <li>Pixel 3–8 & 8 Pro</li>\n        <li class=\"note\">(Excluding Japan & Australia Pixel 3)</li>\n      </ul>\n    </div>\n\n    <div class=\"compatibility-card\">\n      <h3>✅ Other Devices</h3>\n      <ul>\n        <li>Motorola Razr (2020+)</li>\n        <li>Huawei P40/P50 (no Pro+)</li>\n        <li>Oppo Find X3/X5/X6</li>\n        <li>Sony Xperia 10 III–V</li>\n      </ul>\n    </div>\n\n    <div class=\"compatibility-card warning\">\n      <h3>🚫 Not Supported</h3>\n      <ul>\n        <li>Carrier-locked phones</li>\n        <li>iPhones older than XR</li>\n        <li>Xiaomi, POCO, Realme (most models)</li>\n        <li>Entry-level/older Android</li>\n      </ul>\n    </div>\n  </div>\n\n  <p class=\"help-text\">\n    💬 Not sure? <a href=\"/contact\">Chat with our team</a> — we’ll confirm your device before you travel.\n  </p>\n</section>\n\n<style>\n.roamio-compatibility {\n  background: #D7F848;\n  color: #000;\n  padding: 3rem 1rem;\n  font-family: 'Inter', sans-serif;\n  text-align: center;\n}\n.roamio-compatibility h2 {\n  font-size: 2rem;\n  margin-bottom: 0.5rem;\n}\n.roamio-compatibility p {\n  font-size: 1rem;\n  margin-bottom: 1.5rem;\n}\n.compatibility-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));\n  gap: 1.5rem;\n  margin-bottom: 2rem;\n}\n.compatibility-card {\n  background: #fff;\n  border: 2px solid #000;\n  border-radius: 12px;\n  padding: 1.25rem;\n  box-shadow: 0 4px 12px rgba(0,0,0,0.05);\n  text-align: left;\n}\n.compatibility-card h3 {\n  font-size: 1.125rem;\n  margin-bottom: 0.75rem;\n}\n.compatibility-card ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n.compatibility-card ul li {\n  font-size: 0.95rem;\n  margin-bottom: 0.5rem;\n}\n.compatibility-card ul li.note {\n  font-style: italic;\n}\n.compatibility-card.warning {\n  background: #fff3f3;\n  border-color: #ff6b6b;\n}\n.compatibility-card.warning h3 {\n  color: #b00020;\n}\n.help-text {\n  font-size: 0.95rem;\n}\n.help-text a {\n  color: #000;\n  font-weight: 600;\n  text-decoration: underline;\n}\n@media (max-width: 768px) {\n  .compatibility-grid {\n    grid-template-columns: 1fr;\n  }\n}\n</style>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "custom_liquid_dNcnmx": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "liquid": "<section class=\"roamio-referral\">\n  <h2> Invite & Earn with Roamio</h2>\n  <p>Share Roamio with your friends and earn <strong>$5 USD</strong> for every person who activates an eSIM. Fast, simple, and rewarding.</p>\n\n  <div class=\"referral-steps\">\n\n    <div class=\"referral-step\">\n      <div class=\"step-number\">1</div>\n      <h3>Get Your Code</h3>\n      <p>Sign up and receive your unique referral link or code instantly.</p>\n    </div>\n\n    <div class=\"referral-step\">\n      <div class=\"step-number\">2</div>\n      <h3>Share It</h3>\n      <p>Send it to friends, fellow travelers, or drop it in your social profiles.</p>\n    </div>\n\n    <div class=\"referral-step\">\n      <div class=\"step-number\">3</div>\n      <h3>You Earn $5</h3>\n      <p>Every time someone buys with your code, you earn $5 — no limits.</p>\n    </div>\n\n  </div>\n\n  <p class=\"cta-text\">🔗 Start earning now: <a href=\"/pages/referral\">Join the Roamio Referral Program</a></p>\n</section>\n\n<style>\n.roamio-referral {\n  max-width: 1000px;\n  margin: auto;\n  padding: 2rem 1rem;\n  font-family: 'Inter', sans-serif;\n  text-align: center;\n  color: #000;\n}\n\n.roamio-referral h2 {\n  font-size: 2.2rem;\n  margin-bottom: 0.5rem;\n  color: #000;\n}\n\n.roamio-referral p {\n  font-size: 1rem;\n  margin-bottom: 1.2rem;\n  color: #333;\n}\n\n.referral-steps {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 1.5rem;\n  justify-content: center;\n  margin-top: 2rem;\n}\n\n.referral-step {\n  background: #F9F9F9;\n  border: 2px solid #D7F848;\n  border-radius: 14px;\n  padding: 1.2rem;\n  width: 280px;\n  box-shadow: 0 3px 10px rgba(0,0,0,0.05);\n  text-align: center;\n}\n\n.step-number {\n  background: #D7F848;\n  color: #000;\n  border-radius: 50%;\n  width: 36px;\n  height: 36px;\n  display: inline-block;\n  line-height: 36px;\n  font-weight: bold;\n  margin-bottom: 0.7rem;\n}\n\n.referral-step h3 {\n  font-size: 1.1rem;\n  margin-bottom: 0.5rem;\n  color: #111;\n}\n\n.referral-step p {\n  font-size: 0.95rem;\n  color: #444;\n}\n\n.cta-text {\n  margin-top: 2rem;\n  font-size: 1rem;\n  color: #222;\n}\n\n.cta-text a {\n  color: #000;\n  background: #D7F848;\n  padding: 0.4rem 0.8rem;\n  border-radius: 8px;\n  font-weight: 600;\n  text-decoration: none;\n}\n</style>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "custom_liquid_nMA6xD",
+    "custom_liquid_dNcnmx"
+  ]
+}

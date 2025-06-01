@@ -1,0 +1,86 @@
+{%- comment -%}
+  Collection Meta Tags
+  - Dynamically generates meta tags for collections
+  - Optimizes for search engines and social sharing
+  - Includes structured data for products
+{%- endcomment -%}
+
+{%- liquid
+  assign collection_title = collection.title | escape
+  assign collection_description = collection.description | strip_html | escape
+  assign collection_url = shop.url | append: collection.url
+  assign collection_image = collection.image | default: collection.products.first.featured_image
+-%}
+
+{%- capture meta_title -%}
+  {%- if collection.template_suffix contains 'country' -%}
+    eSIM for {{ collection_title }} | Travel Data Plans from {{ shop.name }}
+  {%- elsif collection.template_suffix contains 'region' -%}
+    {{ collection_title }} eSIM Plans | Regional Coverage by {{ shop.name }}
+  {%- else -%}
+    {{ collection_title }} | International eSIM Data Plans | {{ shop.name }}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- capture meta_description -%}
+  {%- if collection_description != blank -%}
+    {{ collection_description | truncatewords: 30 }}
+  {%- else -%}
+    Browse {{ collection_title }} eSIM plans for international travel. Instant activation, reliable connection in {{ collection.products.size }}+ destinations. Get your digital eSIM from {{ shop.name }} today!
+  {%- endif -%}
+{%- endcapture -%}
+
+<title>{{ meta_title }}</title>
+<meta name="description" content="{{ meta_description }}">
+
+{%- comment -%}Open Graph Tags{%- endcomment -%}
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ meta_title }}">
+<meta property="og:description" content="{{ meta_description }}">
+<meta property="og:url" content="{{ collection_url }}">
+{%- if collection_image -%}
+  <meta property="og:image" content="{{ collection_image | img_url: '1200x630', crop: 'center' }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+{%- endif -%}
+
+{%- comment -%}Twitter Card Tags{%- endcomment -%}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ meta_title }}">
+<meta name="twitter:description" content="{{ meta_description }}">
+{%- if collection_image -%}
+  <meta name="twitter:image" content="{{ collection_image | img_url: '1200x630', crop: 'center' }}">
+{%- endif -%}
+
+{%- comment -%}Collection Schema Markup{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ collection_title }}",
+  "description": "{{ collection_description }}",
+  "url": "{{ collection_url }}",
+  {% if collection_image %}
+  "image": "{{ collection_image | img_url: 'large' }}",
+  {% endif %}
+  "numberOfItems": {{ collection.products.size }},
+  "offers": {
+    "@type": "AggregateOffer",
+    "lowPrice": "{{ collection.products | sort: 'price' | first.price | divided_by: 100.00 }}",
+    "highPrice": "{{ collection.products | sort: 'price' | last.price | divided_by: 100.00 }}",
+    "priceCurrency": "{{ shop.currency }}",
+    "offerCount": {{ collection.products.size }}
+  }
+}
+</script>
+
+{%- comment -%}Additional Meta Tags{%- endcomment -%}
+<meta name="keywords" content="eSIM, {{ collection_title | downcase }}, international data, travel sim, digital sim card, {{ collection.tags | join: ', ' | downcase }}">
+<link rel="canonical" href="{{ collection_url }}">
+
+{%- if collection.previous_product -%}
+  <link rel="prev" href="{{ collection.previous_product.url }}">
+{%- endif -%}
+{%- if collection.next_product -%}
+  <link rel="next" href="{{ collection.next_product.url }}">
+{%- endif -%} 
